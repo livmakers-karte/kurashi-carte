@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="肌・お風呂タイプ">
+  <rect width="128" height="128" rx="28" fill="#DCEEF0"/>
+  <!-- bubbles rising -->
+  <g fill="#F7FCFC" stroke="#4FB0C4" stroke-width="2">
+    <circle cx="44" cy="36" r="9"/><circle cx="64" cy="26" r="7"/><circle cx="82" cy="38" r="6"/>
+  </g>
+  <!-- tub -->
+  <g transform="translate(24 58)">
+    <path d="M4 6 v10 a18 18 0 0 0 18 18 h38 a18 18 0 0 0 18-18 V6" fill="#4FB0C4" stroke="#2C7E92" stroke-width="3"/>
+    <rect x="0" y="0" width="84" height="8" rx="4" fill="#0E3A47"/>
+    <path d="M10 14 q30 8 64 0" fill="none" stroke="#F7FCFC" stroke-width="3" opacity="0.7"/>
+  </g>
+  <!-- feet -->
+  <g fill="#0E3A47"><rect x="34" y="98" width="12" height="8" rx="4"/><rect x="82" y="98" width="12" height="8" rx="4"/></g>
+  <path d="M96 80 c-4 -6 -13 -1 -8 6 c2 4 8 8 8 8 s6 -4 8 -8 c5 -7 -4 -12 -8 -6 Z" fill="#F4795B"/>
+</svg>

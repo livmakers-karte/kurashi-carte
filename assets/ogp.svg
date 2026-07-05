@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="暮らしの水環境カルテ サンプル">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E3A47"/><stop offset="1" stop-color="#2C7E92"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5EBACE"/><stop offset="1" stop-color="#2C7E92"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- faint bubbles -->
+  <g fill="#FFFFFF" opacity="0.07">
+    <circle cx="120" cy="120" r="70"/><circle cx="1080" cy="90" r="46"/>
+    <circle cx="1010" cy="540" r="90"/><circle cx="80" cy="520" r="40"/>
+  </g>
+
+  <!-- card -->
+  <g transform="translate(90 70)">
+    <rect x="0" y="0" width="1020" height="490" rx="26" fill="#F7FCFC"/>
+    <rect x="0" y="0" width="1020" height="490" rx="26" fill="none" stroke="#DCE8E7" stroke-width="2"/>
+    <!-- header band -->
+    <path d="M0 26 a26 26 0 0 1 26-26 H994 a26 26 0 0 1 26 26 V96 H0 Z" fill="#0E3A47"/>
+    <text x="44" y="46" fill="#8FD3E0" font-family="Trebuchet MS, Verdana, sans-serif" font-size="20" letter-spacing="4">WATER CARE RECORD</text>
+    <text x="44" y="78" fill="#FFFFFF" font-family="'Hiragino Maru Gothic ProN','Yu Gothic UI',sans-serif" font-size="30" font-weight="bold">暮らしの水環境カルテ</text>
+    <text x="820" y="58" fill="#DCEEF0" font-family="Trebuchet MS, Verdana, sans-serif" font-size="18" letter-spacing="1">No. KM-20260706-0731</text>
+
+    <!-- score gauge (water drop filling) -->
+    <g transform="translate(70 140)">
+      <path d="M100 0 C165 92 200 148 200 196 a100 100 0 0 1-200 0 C0 148 35 92 100 0 Z" fill="#EAF7F8" stroke="#4FB0C4" stroke-width="3"/>
+      <clipPath id="clip"><path d="M100 0 C165 92 200 148 200 196 a100 100 0 0 1-200 0 C0 148 35 92 100 0 Z"/></clipPath>
+      <g clip-path="url(#clip)">
+        <rect x="0" y="118" width="200" height="180" fill="url(#water)"/>
+        <path d="M0 118 q25 -14 50 0 t50 0 t50 0 t50 0 v180 H0 Z" fill="#5EBACE" opacity="0.8"/>
+      </g>
+      <text x="100" y="150" text-anchor="middle" fill="#0E3A47" font-family="Trebuchet MS, Verdana, sans-serif" font-size="58" font-weight="bold">62</text>
+      <text x="100" y="182" text-anchor="middle" fill="#0E3A47" font-family="'Hiragino Maru Gothic ProN','Yu Gothic UI',sans-serif" font-size="17">水環境スコア</text>
+    </g>
+
+    <!-- findings -->
+    <g transform="translate(360 150)">
+      <text x="0" y="6" fill="#67787D" font-family="Trebuchet MS, sans-serif" font-size="16" letter-spacing="3">YOUR TYPE</text>
+      <text x="0" y="46" fill="#0E3A47" font-family="'Hiragino Maru Gothic ProN','Yu Gothic UI',sans-serif" font-size="40" font-weight="bold">部屋干し臭・洗浄不足 タイプ</text>
+      <line x1="0" y1="70" x2="560" y2="70" stroke="#DCE8E7" stroke-width="2"/>
+      <text x="0" y="112" fill="#1F2A2E" font-family="'Hiragino Kaku Gothic ProN','Yu Gothic UI',sans-serif" font-size="21">所見：室内干しと洗浄不足で、生乾きのにおいが</text>
+      <text x="0" y="144" fill="#1F2A2E" font-family="'Hiragino Kaku Gothic ProN','Yu Gothic UI',sans-serif" font-size="21">出やすい傾向。まずは水環境の見直しから。</text>
+      <text x="0" y="188" fill="#67787D" font-family="'Hiragino Kaku Gothic ProN',sans-serif" font-size="15">※傾向の目安です（医療・効果を保証するものではありません）</text>
+    </g>
+
+    <!-- coral round seal -->
+    <g transform="translate(858 300)">
+      <circle cx="0" cy="0" r="72" fill="none" stroke="#F4795B" stroke-width="4"/>
+      <circle cx="0" cy="0" r="60" fill="#F4795B"/>
+      <text x="0" y="-8" text-anchor="middle" fill="#fff" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="19" font-weight="bold">診断済</text>
+      <text x="0" y="20" text-anchor="middle" fill="#FBDDD3" font-family="Trebuchet MS, sans-serif" font-size="13" letter-spacing="2">KURASHI</text>
+    </g>
+  </g>
+
+  <text x="600" y="600" text-anchor="middle" fill="#DCEEF0" font-family="'Hiragino Maru Gothic ProN','Yu Gothic UI',sans-serif" font-size="22">洗濯・水回りの悩み診断　|　暮らしのカルテ　kurashi-carte.jp</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="食器・水回りタイプ">
+  <rect width="128" height="128" rx="28" fill="#D8EFE4"/>
+  <ellipse cx="64" cy="74" rx="40" ry="12" fill="#0E3A47" opacity="0.08"/>
+  <circle cx="64" cy="66" r="34" fill="#F7FCFC" stroke="#2C7E92" stroke-width="3"/>
+  <circle cx="64" cy="66" r="20" fill="none" stroke="#74B79B" stroke-width="3"/>
+  <!-- water drop -->
+  <path d="M64 20 c10 14 15 21 15 27 a15 15 0 0 1-30 0 c0-6 5-13 15-27 Z" fill="#4FB0C4"/>
+  <ellipse cx="59" cy="44" rx="3.6" ry="5" fill="#F7FCFC" opacity="0.6"/>
+  <g fill="#FFFFFF"><circle cx="40" cy="40" r="6"/><circle cx="90" cy="42" r="5"/></g>
+</svg>

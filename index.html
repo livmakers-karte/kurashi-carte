@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- 公開時に index,follow へ切替（=公開ボタン） -->
+<title>暮らしのカルテ｜洗濯・水回り・住まいの悩みを数値で診る無料診断メディア</title>
+<meta name="description" content="洗濯・水回り・住まいの「なんとなく気になる」を、水環境スコアと一枚のカルテで見える化。部屋干し臭・洗濯槽カビ・敏感肌・食器のぬめりなど、暮らしの水環境タイプを無料診断。マグちゃんグループ運営。">
+<link rel="canonical" href="https://kurashi-carte.jp/">
+<meta name="theme-color" content="#0E3A47">
+
+<!-- OGP / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="暮らしのカルテ">
+<meta property="og:title" content="暮らしのカルテ｜洗濯・水回り・住まいの悩みを数値で診る無料診断">
+<meta property="og:description" content="部屋干し臭・洗濯槽カビ・敏感肌・水回りのぬめり…。暮らしの水環境タイプと水環境スコアを無料でカルテ発行。">
+<meta property="og:url" content="https://kurashi-carte.jp/">
+<meta property="og:image" content="https://kurashi-carte.jp/assets/ogp.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="暮らしのカルテ｜洗濯・水回りの悩み診断">
+<meta name="twitter:description" content="暮らしの水環境タイプと水環境スコアを無料でカルテ発行。">
+<meta name="twitter:image" content="https://kurashi-carte.jp/assets/ogp.svg">
+
+<!-- セキュリティ：meta CSP（GitHub Pagesでヘッダ相当の防御。母屋は外部通信なし） -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/images.css">
+
+<!-- JSON-LD: WebSite + Organization -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://kurashi-carte.jp/#website",
+      "url":"https://kurashi-carte.jp/",
+      "name":"暮らしのカルテ",
+      "description":"洗濯・水回り・住まいの悩みを数値で診る無料診断メディア。",
+      "inLanguage":"ja",
+      "publisher":{"@id":"https://kurashi-carte.jp/#org"}
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://kurashi-carte.jp/#org",
+      "name":"マグちゃんグループ（暮らしのカルテ運営）",
+      "url":"https://kurashi-carte.jp/",
+      "logo":"https://kurashi-carte.jp/assets/favicon.svg",
+      "sameAs":["https://magchan.com"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script src="/assets/guard.js"></script>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/favicon.svg" alt="">
+      <span>暮らしのカルテ<small>KURASHI CARTE｜暮らしの水環境メディア</small></span>
+    </a>
+    <nav class="nav" aria-label="サイト内">
+      <a href="/sentaku/">洗濯・水回り診断</a>
+      <a href="/mizu-kankyo-score/">水環境スコアとは</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Water &amp; Living Care Media</p>
+        <h1 id="heroTitle">暮らしの「なんとなく気になる」を、やさしい診断票に。</h1>
+        <p class="lead" id="heroLead">洗濯・水回り・住まいの小さな不快を、水滴のスコアと一枚のカルテで見える化。あなたの暮らしの水環境を、押し売りせず継続的に見守ります。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="/sentaku/">洗濯・水回りの悩みを無料診断 →</a>
+          <a class="btn btn-ghost" href="/mizu-kankyo-score/">水環境スコアとは？</a>
+        </div>
+        <p style="margin-top:14px"><span class="tag mint">洗剤に頼りすぎない</span> <span class="tag">肌にやさしい</span> <span class="tag coral">環境に配慮</span></p>
+      </div>
+      <div class="art float"><img src="/assets/hero.svg" alt="やさしい水と洗濯の暮らしのイラスト" width="960" height="640"></div>
+    </div>
+  </section>
+
+  <!-- LIVE 診断 -->
+  <section class="wm">
+    <div class="wrap">
+      <p class="eyebrow center">いま使える診断</p>
+      <h2 class="center" style="font-size:1.6rem;margin:.2em 0 1em">暮らしの水環境を、無料でカルテにします</h2>
+      <div id="liveList" class="grid">
+        <a href="/sentaku/" class="card feature" style="text-decoration:none">
+          <img src="/assets/type-roomdry.svg" alt="" width="76" height="76">
+          <div>
+            <span class="tag coral">第1弾</span>
+            <h3 style="margin:.4em 0 .3em;font-size:1.25rem">洗濯・水回りの悩み診断</h3>
+            <p style="margin:.2em 0 .8em;color:#33454a">部屋干し臭・洗濯槽カビ・敏感肌・水回りのぬめり…。7つの質問で「あなたの暮らしの水環境タイプ」を判定し、水環境スコアをカルテとして無料発行します。</p>
+            <span class="btn btn-primary">無料で診断する →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING -->
+  <section style="background:#eef7f8">
+    <div class="wrap">
+      <p class="eyebrow center" id="upLabel">これから広げる暮らしの診断</p>
+      <h2 class="center" style="font-size:1.4rem;margin:.2em 0 1em">暮らし・住まいの診断を、少しずつ増やしていきます</h2>
+      <div id="upList" class="grid g4">
+        <div class="tile"><img src="/assets/type-roomdry.svg" alt="" width="56" height="56"><h3>室内干し・生乾き対策</h3><p style="font-size:.86rem">干し方・環境・通気から生乾き臭のリスクを整理</p><span class="soon">COMING SOON</span></div>
+        <div class="tile"><img src="/assets/type-baby.svg" alt="" width="56" height="56"><h3>赤ちゃん・敏感肌の洗濯</h3><p style="font-size:.86rem">肌にやさしい洗い方と選び方の傾向づくり</p><span class="soon">COMING SOON</span></div>
+        <div class="tile"><img src="/assets/type-kitchen.svg" alt="" width="56" height="56"><h3>キッチン・水回りのぬめり</h3><p style="font-size:.86rem">食器・シンク・排水まわりの水環境チェック</p><span class="soon">COMING SOON</span></div>
+        <div class="tile"><img src="/assets/type-bath.svg" alt="" width="56" height="56"><h3>お風呂・湯まわりのケア</h3><p style="font-size:.86rem">湯垢・肌のつっぱりから入浴環境を見直す</p><span class="soon">COMING SOON</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 関連 -->
+  <section>
+    <div class="wrap narrow">
+      <p class="eyebrow center">くらしとからだの、関連メディア</p>
+      <div id="crossList" class="grid g2"></div>
+    </div>
+  </section>
+
+  <!-- 免責 -->
+  <section style="padding-top:0">
+    <div class="wrap narrow">
+      <div class="disclaimer">
+        <p id="discKeihyo"><strong>表現について：</strong>本サイトの表現は景品表示法・薬機法に配慮し、洗浄・消臭・除菌などの効果を断定・誇大にしません。使用感には個人差があります。</p>
+        <p id="discMedical" style="margin-bottom:0"><strong>診断について：</strong>本診断は暮らしの傾向を知るための目安であり、医療診断・治療・特定商品の効果を保証するものではありません。気になる肌症状などは医療機関にご相談ください。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="fnav" style="margin-bottom:10px">
+      <a href="/">ホーム</a>
+      <a href="/sentaku/">洗濯・水回り診断</a>
+      <a href="/mizu-kankyo-score/">水環境スコアとは</a>
+    </div>
+    <small>暮らしのカルテ（kurashi-carte.jp）／ 運営：マグちゃんグループ（D2C事業）<br>© 暮らしのカルテ. 本サイトの内容は傾向の目安であり、効果・効能を保証するものではありません。</small>
+  </div>
+</footer>
+
+<script src="/js/home.js"></script>
+</body>
+</html>

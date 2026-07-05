@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="部屋干し臭・洗浄不足タイプ">
+  <rect width="128" height="128" rx="28" fill="#DCEEF0"/>
+  <path d="M24 44 C48 52 80 52 104 44" fill="none" stroke="#0E3A47" stroke-width="3" opacity="0.4"/>
+  <g transform="translate(40 46)">
+    <path d="M0 6 L12 0 L24 6 L36 0 L48 6 L42 22 L36 19 L36 60 L12 60 L12 19 L6 22 Z" fill="#F7FCFC" stroke="#2C7E92" stroke-width="3"/>
+  </g>
+  <rect x="60" y="40" width="5" height="12" rx="2.5" fill="#F4795B"/>
+  <g fill="none" stroke="#74B79B" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <path d="M84 78 q6 -8 0 -16 q-6 -8 0 -16"/>
+    <path d="M96 84 q6 -8 0 -16 q-6 -8 0 -16"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="敏感肌・赤ちゃんタイプ">
+  <rect width="128" height="128" rx="28" fill="#FBDDD3"/>
+  <g transform="translate(40 30)">
+    <path d="M6 8 L24 0 L42 8 L52 26 L40 33 L40 52 L47 82 L28 82 L24 63 L20 82 L1 82 L8 52 L8 33 L-4 26 Z" fill="#F7FCFC" stroke="#F4795B" stroke-width="3"/>
+    <circle cx="24" cy="36" r="3.4" fill="#F4795B"/><circle cx="24" cy="50" r="3.4" fill="#F4795B"/>
+  </g>
+  <path d="M96 40 c-6 -8 -18 -2 -12 8 c3 6 12 12 12 12 s9 -6 12 -12 c6 -10 -6 -16 -12 -8 Z" fill="#F4795B"/>
+  <g fill="#74B79B" opacity="0.8"><circle cx="30" cy="104" r="4"/><circle cx="98" cy="100" r="5"/></g>
+</svg>

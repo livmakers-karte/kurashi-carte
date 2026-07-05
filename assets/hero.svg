@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-label="やさしい水と洗濯の暮らしのイラスト">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4FBFB"/>
+      <stop offset="1" stop-color="#DCEEF0"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5EBACE"/>
+      <stop offset="1" stop-color="#2C7E92"/>
+    </linearGradient>
+    <linearGradient id="basin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FD3E0"/>
+      <stop offset="1" stop-color="#4FB0C4"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FDE9A6"/>
+      <stop offset="1" stop-color="#F7C948"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="960" height="640" fill="url(#sky)"/>
+  <circle cx="806" cy="118" r="60" fill="url(#sun)" opacity="0.9"/>
+
+  <!-- floating bubbles -->
+  <g fill="#FFFFFF" opacity="0.85">
+    <circle cx="150" cy="120" r="16"/><circle cx="205" cy="88" r="9"/>
+    <circle cx="700" cy="230" r="12"/><circle cx="620" cy="150" r="7"/>
+    <circle cx="360" cy="90" r="10"/>
+  </g>
+  <g fill="none" stroke="#74B79B" stroke-width="2" opacity="0.55">
+    <circle cx="150" cy="120" r="16"/><circle cx="700" cy="230" r="12"/>
+  </g>
+
+  <!-- laundry line -->
+  <path d="M60 210 C300 250 660 250 900 210" fill="none" stroke="#0E3A47" stroke-width="3" opacity="0.35"/>
+  <!-- shirt -->
+  <g transform="translate(150 224)">
+    <path d="M0 8 L18 0 L34 8 L50 0 L68 8 L60 30 L52 26 L52 84 L16 84 L16 26 L8 30 Z" fill="#DCEEF0" stroke="#2C7E92" stroke-width="2.4"/>
+    <line x1="34" y1="8" x2="34" y2="20" stroke="#2C7E92" stroke-width="2"/>
+  </g>
+  <!-- baby onesie -->
+  <g transform="translate(430 232)">
+    <path d="M4 6 L20 0 L36 6 L44 22 L34 28 L34 44 L40 70 L24 70 L20 54 L16 70 L0 70 L6 44 L6 28 L-4 22 Z" fill="#FBDDD3" stroke="#F4795B" stroke-width="2.4"/>
+    <circle cx="20" cy="30" r="3" fill="#F4795B"/><circle cx="20" cy="42" r="3" fill="#F4795B"/>
+  </g>
+  <!-- sock -->
+  <g transform="translate(660 236)">
+    <path d="M10 0 L26 0 L26 40 L44 46 L44 62 L10 62 Z" fill="#D8EFE4" stroke="#74B79B" stroke-width="2.4"/>
+    <line x1="10" y1="14" x2="26" y2="14" stroke="#74B79B" stroke-width="2"/>
+  </g>
+  <!-- clothespins -->
+  <g fill="#F4795B"><rect x="180" y="215" width="6" height="16" rx="3"/><rect x="452" y="223" width="6" height="16" rx="3"/><rect x="686" y="227" width="6" height="16" rx="3"/></g>
+
+  <!-- wash basin with water -->
+  <g transform="translate(300 400)">
+    <ellipse cx="180" cy="150" rx="220" ry="34" fill="#0E3A47" opacity="0.08"/>
+    <path d="M30 20 Q180 -10 330 20 L308 128 Q180 156 52 128 Z" fill="url(#basin)" stroke="#2C7E92" stroke-width="3"/>
+    <path d="M40 40 Q180 16 320 40 L308 120 Q180 146 52 120 Z" fill="#EAF7F8" opacity="0.85"/>
+    <path d="M52 66 Q180 48 308 66 Q300 118 180 130 Q60 118 52 66Z" fill="#BFE6EC"/>
+    <!-- foam on water -->
+    <g fill="#FFFFFF"><circle cx="110" cy="66" r="14"/><circle cx="140" cy="58" r="18"/><circle cx="176" cy="64" r="13"/><circle cx="210" cy="56" r="17"/><circle cx="248" cy="66" r="14"/></g>
+  </g>
+
+  <!-- friendly water-drop mascot -->
+  <g transform="translate(560 360)">
+    <path d="M60 0 C104 58 128 92 128 124 a68 68 0 0 1-136 0 C-8 92 16 58 60 0 Z" fill="url(#drop)"/>
+    <ellipse cx="40" cy="104" rx="18" ry="26" fill="#FFFFFF" opacity="0.35"/>
+    <g fill="#0E3A47"><circle cx="44" cy="118" r="6"/><circle cx="82" cy="118" r="6"/></g>
+    <circle cx="46" cy="116" r="2" fill="#fff"/><circle cx="84" cy="116" r="2" fill="#fff"/>
+    <path d="M52 138 Q63 150 74 138" fill="none" stroke="#0E3A47" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="30" cy="132" r="8" fill="#F4795B" opacity="0.5"/><circle cx="96" cy="132" r="8" fill="#F4795B" opacity="0.5"/>
+  </g>
+
+  <!-- leaves -->
+  <g fill="#74B79B">
+    <path d="M120 470 Q150 440 190 452 Q160 486 120 470 Z"/>
+    <path d="M860 500 Q828 470 792 486 Q824 518 860 500 Z"/>
+  </g>
+  <g fill="none" stroke="#4E8E76" stroke-width="1.6">
+    <path d="M126 468 Q158 460 186 454"/><path d="M854 498 Q824 490 796 486"/>
+  </g>
+</svg>
