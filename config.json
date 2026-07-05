@@ -244,9 +244,9 @@
     },
     "products": {
       "roomdry": { "name": "洗たくマグちゃん／ランドリー系", "productUrl": "https://magchan.com/c/item-all/m-00019", "subscribeUrl": "https://magchan.com/c/item-all/gd39", "altUrl": "https://magchan.com/c/item-all/m-00018", "_note": "productUrl=洗たくマグちゃんプラス(単品)／subscribeUrl=定期12か月コース(液体+L)／altUrl=スペシャル4個セット。BOSS提供2026-07-06" },
-      "baby":    { "name": "ベビー・敏感肌向けライン", "productUrl": "__MAGCHAN_URL_BABY__", "subscribeUrl": "__MAGCHAN_SUBSCRIBE_BABY__" },
-      "kitchen": { "name": "キッチン・食器系アイテム", "productUrl": "__MAGCHAN_URL_KITCHEN__", "subscribeUrl": "__MAGCHAN_SUBSCRIBE_KITCHEN__" },
-      "bath":    { "name": "バス・お風呂系アイテム", "productUrl": "__MAGCHAN_URL_BATH__", "subscribeUrl": "__MAGCHAN_SUBSCRIBE_BATH__" }
+      "baby":    { "name": "ベビー・敏感肌向けライン", "productUrl": "https://magchan.com/c/item-all/m-00019", "subscribeUrl": "https://magchan.com/c/item-all/gd39", "_note": "専用ベビー商品URL未提供のため、合成界面活性剤・蛍光増白剤不使用で敏感肌/赤ちゃんに選ばれる洗たくマグちゃん(m-00019)/定期(gd39)に暫定接続。専用商品があればBOSS差替。2026-07-06" },
+      "kitchen": { "name": "キッチン・食器系アイテム", "productUrl": "https://magchan.com/c/dish/gd26", "subscribeUrl": "__MAGCHAN_SUBSCRIBE_KITCHEN__", "_note": "productUrl=食器洗い機用 液体マグちゃん(通常購入・定期なし)。BOSS提供2026-07-06" },
+      "bath":    { "name": "バス・お風呂系アイテム", "productUrl": "https://magchan.com/c/item-all/m-00108", "subscribeUrl": "__MAGCHAN_SUBSCRIBE_BATH__", "_note": "productUrl=アザラシ親子 バスマグ(通常購入・定期なし)。BOSS提供2026-07-06" }
     },
     "offer": {
       "heading": "続けやすい定期コース（らくトク便）",
