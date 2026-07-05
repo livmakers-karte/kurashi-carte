@@ -13,9 +13,9 @@
 
   "site": {
     "name": "暮らしのカルテ",
-    "subtitle": "暮らし・住まいの水環境メディア",
+    "subtitle": "暮らし・住まいの悩みを診断で見える化する総合メディア",
     "url": "https://kurashi-carte.jp",
-    "operator": "マグちゃんグループ（D2C事業）",
+    "operator": "アートナップ株式会社（artnap co.,ltd.）",
     "email_note": "お問い合わせは各ページのフォームより（メールアドレスは掲載しません＝セキュリティ配慮）"
   },
 
@@ -42,10 +42,11 @@
   },
 
   "images": {
-    "hero": "/assets/hero.svg",
-    "ogp": "/assets/ogp.svg",
+    "hero": "/assets/hero-hub.svg",
+    "ogp": "/assets/ogp-hub.svg",
     "favicon": "/assets/favicon.svg",
-    "watermark": "/assets/watermark.svg"
+    "watermark": "/assets/watermark.svg",
+    "hero_note": "母屋トップの世界観画像。写真へ差し替える場合は images.css ではなく index.html の hero img と og:image を合わせて変更（母屋専用アセット。/sentaku/ 等が使う hero.svg とは別ファイルにして共存）。"
   },
 
   "home": {

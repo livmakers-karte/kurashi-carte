@@ -74,7 +74,7 @@
 1. スプレッドシートを新規作成 → URL の `/d/ ～ /edit` 間の ID を控える。
 2. [script.google.com](https://script.google.com) で新規プロジェクト → `gas/receiver.gs` の中身を貼り付け。
 3. **プロジェクトの設定 → スクリプト プロパティ** に4つを登録（**HTMLには絶対に書かない**）：
-   - `NOTIFY_TO`：通知先メール（**グループ共有アドレス。個人アドレス不可**）
+   - `NOTIFY_TO`：通知先メール（グループ共有の info@ アドレス。**このREADMEやHTMLには実アドレスを書かず、GASスクリプトプロパティにのみ直接入力**＝メール露出・スパム収集の防止）。実アドレスはBOSSが管理（別途共有済み）。
    - `SHEET_ID`：上記スプレッドシートID
    - `TURNSTILE_SECRET`：Cloudflare Turnstile のシークレットキー
    - `ALLOWED_HOSTS`：`kurashi-carte.jp,www.kurashi-carte.jp`
