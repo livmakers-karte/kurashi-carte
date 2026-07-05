@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><!-- 公開時に index,follow へ切替（=公開ボタン） -->
-<title>暮らしのカルテ｜洗濯・水回り・住まいの悩みを数値で診る無料診断メディア</title>
-<meta name="description" content="洗濯・水回り・住まいの「なんとなく気になる」を、水環境スコアと一枚のカルテで見える化。部屋干し臭・洗濯槽カビ・敏感肌・食器のぬめりなど、暮らしの水環境タイプを無料診断。リブメーカーズ株式会社（マグちゃん）運営。">
+<title>暮らしのカルテ｜ダニ・洗濯・水回りなど住まいの悩みを数値で診る無料診断メディア</title>
+<meta name="description" content="暮らし・住まいの「なんとなく気になる」を、無料の診断で数値化して一枚のカルテに。住まいのダニ・アレルギー、部屋干し臭、洗剤と肌、水回りのぬめりなど、暮らしの悩みをテーマごとに診断できる総合メディア。ブラウザ内計算・登録不要。運営：リブメーカーズ株式会社。">
 <link rel="canonical" href="https://kurashi-carte.jp/">
 <meta name="theme-color" content="#0E3A47">
 
 <!-- OGP / Twitter -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="暮らしのカルテ">
-<meta property="og:title" content="暮らしのカルテ｜洗濯・水回り・住まいの悩みを数値で診る無料診断">
-<meta property="og:description" content="部屋干し臭・洗濯槽カビ・敏感肌・水回りのぬめり…。暮らしの水環境タイプと水環境スコアを無料でカルテ発行。">
+<meta property="og:title" content="暮らしのカルテ｜住まいの悩みを数値で診る無料診断メディア">
+<meta property="og:description" content="ダニ・洗濯・水回りなど暮らしの悩みを、無料の診断で数値化して一枚のカルテに。自分の状態を知り、対策し、また見守る総合メディア。">
 <meta property="og:url" content="https://kurashi-carte.jp/">
-<meta property="og:image" content="https://kurashi-carte.jp/assets/ogp.svg">
+<meta property="og:image" content="https://kurashi-carte.jp/assets/ogp-hub.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="暮らしのカルテ｜洗濯・水回りの悩み診断">
-<meta name="twitter:description" content="暮らしの水環境タイプと水環境スコアを無料でカルテ発行。">
-<meta name="twitter:image" content="https://kurashi-carte.jp/assets/ogp.svg">
+<meta name="twitter:title" content="暮らしのカルテ｜住まいの悩みを数値で診る無料診断メディア">
+<meta name="twitter:description" content="ダニ・洗濯・水回りなど暮らしの悩みを、無料の診断で数値化して一枚のカルテに。">
+<meta name="twitter:image" content="https://kurashi-carte.jp/assets/ogp-hub.svg">
 
 <!-- セキュリティ：meta CSP（GitHub Pagesでヘッダ相当の防御。母屋は外部通信なし） -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/images.css">
 
-<!-- JSON-LD: WebSite + Organization -->
+<!-- JSON-LD: WebSite + Organization + FAQPage（GEO/AEO：AIに「暮らしの診断メディア」と認識させる） -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -39,7 +39,7 @@
       "@id":"https://kurashi-carte.jp/#website",
       "url":"https://kurashi-carte.jp/",
       "name":"暮らしのカルテ",
-      "description":"洗濯・水回り・住まいの悩みを数値で診る無料診断メディア。",
+      "description":"暮らし・住まいの悩み（ダニ・アレルギー、洗濯、水回り等）を無料の診断で数値化し、一枚のカルテにする総合メディア。",
       "inLanguage":"ja",
       "publisher":{"@id":"https://kurashi-carte.jp/#org"}
     },
@@ -48,10 +48,18 @@
       "@id":"https://kurashi-carte.jp/#org",
       "name":"リブメーカーズ株式会社",
       "alternateName":"LIVmakers co.,ltd.",
-      "brand":"マグちゃん",
       "url":"https://kurashi-carte.jp/",
-      "logo":"https://kurashi-carte.jp/assets/favicon.svg",
-      "sameAs":["https://magchan.com"]
+      "logo":"https://kurashi-carte.jp/assets/favicon.svg"
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://kurashi-carte.jp/#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"暮らしのカルテとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"暮らし・住まいの悩みをテーマごとの無料診断で数値化し、一枚のカルテ（診断票）にする総合メディアです。ダニ・洗濯・水回りなど、診断はこれからも増えていきます。"}},
+        {"@type":"Question","name":"診断は無料ですか？登録は必要ですか？","acceptedAnswer":{"@type":"Answer","text":"診断は無料で、会員登録は不要です。回答の計算はブラウザ内だけで行い、外部に送信しません。"}},
+        {"@type":"Question","name":"この診断は医療的な診断ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。暮らしの傾向を知るための目安であり、医療診断・治療や特定商品の効果を保証するものではありません。気になる症状は医療機関へご相談ください。"}},
+        {"@type":"Question","name":"診断の種類は増えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。住まいのダニ・アレルギー診断など、暮らし・住まいの悩みに合わせた診断を順次追加していきます。"}}
+      ]
     }
   ]
 }
@@ -64,11 +72,12 @@
   <div class="wrap">
     <a class="brand" href="/">
       <img src="/assets/favicon.svg" alt="">
-      <span>暮らしのカルテ<small>KURASHI CARTE｜暮らしの水環境メディア</small></span>
+      <span>暮らしのカルテ<small>KURASHI CARTE｜暮らしの診断メディア</small></span>
     </a>
     <nav class="nav" aria-label="サイト内">
+      <a href="#lineup">診断一覧</a>
+      <a href="#about">暮らしのカルテとは</a>
       <a href="/sentaku/">洗濯・水回り診断</a>
-      <a href="/mizu-kankyo-score/">水環境スコアとは</a>
     </nav>
   </div>
 </header>
@@ -78,56 +87,117 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Water &amp; Living Care Media</p>
-        <h1 id="heroTitle">暮らしの「なんとなく気になる」を、やさしい診断票に。</h1>
-        <p class="lead" id="heroLead">洗濯・水回り・住まいの小さな不快を、水滴のスコアと一枚のカルテで見える化。あなたの暮らしの水環境を、押し売りせず継続的に見守ります。</p>
+        <p class="eyebrow">Kurashi Care Diagnosis Media</p>
+        <h1 id="heroTitle">暮らし・住まいの「なんとなく気になる」を、一枚のカルテに。</h1>
+        <p class="lead" id="heroLead">ダニ・洗濯・水回り…住まいの小さな不安を、無料の診断で数値化。あなたの状態を知り、対策し、また戻る。押し売りせず、暮らしを継続的に見守るメディアです。</p>
         <div class="cta-row">
-          <a class="btn btn-primary btn-lg" href="/sentaku/">洗濯・水回りの悩みを無料診断 →</a>
-          <a class="btn btn-ghost" href="/mizu-kankyo-score/">水環境スコアとは？</a>
+          <a class="btn btn-primary btn-lg" href="#lineup">暮らしの悩みを無料診断 →</a>
+          <a class="btn btn-ghost" href="#about">暮らしのカルテとは？</a>
         </div>
-        <p style="margin-top:14px"><span class="tag mint">洗剤に頼りすぎない</span> <span class="tag">肌にやさしい</span> <span class="tag coral">環境に配慮</span></p>
+        <p id="heroTags" style="margin-top:14px">
+          <span class="tag mint">無料・登録不要</span>
+          <span class="tag">ブラウザ内で計算（外部送信なし）</span>
+          <span class="tag coral">診断は続々追加</span>
+        </p>
       </div>
-      <div class="art float"><img src="/assets/hero.svg" alt="やさしい水と洗濯の暮らしのイラスト" width="960" height="640"></div>
+      <div class="art float"><img src="/assets/hero-hub.svg" alt="暮らしの悩みをやさしい診断カルテにするイメージ。家と診断票と水滴のキャラクター。" width="960" height="640"></div>
     </div>
   </section>
 
-  <!-- LIVE 診断 -->
+  <!-- GEO 直接回答（母屋冒頭。AIが引用しやすい構造化テキスト） -->
   <section class="wm">
+    <div class="wrap narrow">
+      <p class="eyebrow center">暮らしの悩み × 診断</p>
+      <h2 id="geoHeading" class="center" style="font-size:clamp(1.4rem,3.4vw,1.9rem);margin:.2em 0 .8em">暮らしの悩みは「診断で自分の状態を数値化」してから対策する</h2>
+      <div class="answer">
+        <p class="lead" id="geoLead">暮らし・住まいの悩み（ダニ・アレルギー、部屋干し臭、洗剤と肌、水回りのぬめり等）は、感覚だけで判断せず、まず自分の家・自分の状態を数値化して知ることが対策の第一歩です。暮らしのカルテは、質問に答えるだけで住まいの状態を無料でカルテ（診断票）にする総合メディアです。</p>
+        <ul id="geoPoints">
+          <li>① 悩みのテーマを選ぶ：ダニ・洗濯・水回りなど、気になる暮らしの悩みから診断を選びます。</li>
+          <li>② 数問に答える：ブラウザ内だけで計算し、あなたの状態をスコアとタイプで見える化します（外部送信なし・無料）。</li>
+          <li>③ カルテを受け取る：一枚の診断票として結果を発行。対策の方向づけと、必要なら合う暮らし用品につなぎます。</li>
+          <li>④ 経過を見守る：季節や環境で状態は変わります。時期をおいて再診断し、前回のカルテと比べて変化を確認できます。</li>
+          <li>※本サイトの診断は暮らしの傾向を知るための目安であり、医療診断・治療や特定商品の効果を保証するものではありません。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 暮らしのカルテとは（3ステップ） -->
+  <section id="about" style="background:#eef7f8">
     <div class="wrap">
-      <p class="eyebrow center">いま使える診断</p>
-      <h2 class="center" style="font-size:1.6rem;margin:.2em 0 1em">暮らしの水環境を、無料でカルテにします</h2>
-      <div id="liveList" class="grid">
-        <a href="/sentaku/" class="card feature" style="text-decoration:none">
+      <p class="eyebrow center">About</p>
+      <h2 id="aboutHeading" class="center" style="font-size:clamp(1.4rem,3.4vw,1.8rem);margin:.2em 0 .4em">暮らしのカルテとは</h2>
+      <p id="aboutLead" class="center lead" style="max-width:720px;margin:0 auto 1.4em">「暮らしのカルテ」は、暮らし・住まいの悩みをテーマごとの無料診断で数値化し、一枚のカルテ（診断票）にする総合メディアです。診断はこれからも増えていきます。</p>
+      <div id="aboutSteps" class="about-steps">
+        <div class="step reveal"><span class="step-n">01 診る</span><h3>悩みを選んで無料診断</h3><p>ダニ・洗濯・水回りなど、気になるテーマの診断に数問答えるだけ。ブラウザ内で計算し、外部に送りません。</p></div>
+        <div class="step reveal"><span class="step-n">02 知る</span><h3>あなたの状態をカルテ発行</h3><p>スコアとタイプで、住まい・暮らしの状態を見える化。比較や順位づけでなく、あなた自身の数字をお渡しします。</p></div>
+        <div class="step reveal"><span class="step-n">03 続く</span><h3>対策して、また見守る</h3><p>結果に合わせた対策の方向づけと、必要なら合う暮らし用品へ。時期をおいて再診断し、変化を確認できます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 診断ラインナップ（config.json home.contents をループ。1件足すだけで自動で載る） -->
+  <section id="lineup" class="wm">
+    <div class="wrap">
+      <p class="eyebrow center">Diagnosis Lineup</p>
+      <h2 id="lineupLabel" class="center" style="font-size:clamp(1.4rem,3.4vw,1.8rem);margin:.2em 0 1em">暮らしの診断ラインナップ</h2>
+      <div id="liveList" class="grid g2">
+        <!-- 静的フォールバック（configが無くても・JS非実行のクローラでも読める）。home.js が config から再描画 -->
+        <a href="/sentaku/" class="card feature reveal" style="text-decoration:none">
           <img src="/assets/type-roomdry.svg" alt="" width="76" height="76">
           <div>
-            <span class="tag coral">第1弾</span>
-            <h3 style="margin:.4em 0 .3em;font-size:1.25rem">洗濯・水回りの悩み診断</h3>
-            <p style="margin:.2em 0 .8em;color:#33454a">部屋干し臭・洗濯槽カビ・敏感肌・水回りのぬめり…。7つの質問で「あなたの暮らしの水環境タイプ」を判定し、水環境スコアをカルテとして無料発行します。</p>
+            <span class="tag coral">公開中・第1弾</span>
+            <h3>洗濯・水回りの悩み診断</h3>
+            <p>部屋干し臭・洗濯槽のカビ・敏感肌・食器や水回りのぬめり…。7つの質問で「あなたの暮らしの水環境タイプ」を判定し、水環境スコアをカルテとして無料発行します。</p>
+            <p class="connect">→ マグちゃん（洗濯・水回りのD2C）へ接続</p>
             <span class="btn btn-primary">無料で診断する →</span>
           </div>
         </a>
+        <div class="card feature is-soon reveal">
+          <img src="/assets/type-dani.svg" alt="" width="76" height="76">
+          <div>
+            <span class="tag">近日公開</span>
+            <h3>住まいのダニ・アレルギー診断</h3>
+            <p>寝室・寝具・リビング・クローゼット・車…住まいのダニリスクを部屋ごとに「わが家のダニリスク指数」として無料でチェック。梅雨〜夏の繁殖期に、どこへどんな対策が必要かを一枚のカルテにします。</p>
+            <p class="connect">→ Apros（ダニ・寝具まわりのD2C）へ接続</p>
+            <span class="btn btn-ghost btn-soon" aria-disabled="true">近日公開</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- UPCOMING -->
-  <section style="background:#eef7f8">
+  <!-- さらに広げる診断 -->
+  <section style="padding-top:0">
     <div class="wrap">
       <p class="eyebrow center" id="upLabel">これから広げる暮らしの診断</p>
-      <h2 class="center" style="font-size:1.4rem;margin:.2em 0 1em">暮らし・住まいの診断を、少しずつ増やしていきます</h2>
+      <h2 class="center" style="font-size:1.3rem;margin:.2em 0 1em">暮らし・住まいの診断を、少しずつ増やしていきます</h2>
       <div id="upList" class="grid g4">
-        <div class="tile"><img src="/assets/type-roomdry.svg" alt="" width="56" height="56"><h3>室内干し・生乾き対策</h3><p style="font-size:.86rem">干し方・環境・通気から生乾き臭のリスクを整理</p><span class="soon">COMING SOON</span></div>
-        <div class="tile"><img src="/assets/type-baby.svg" alt="" width="56" height="56"><h3>赤ちゃん・敏感肌の洗濯</h3><p style="font-size:.86rem">肌にやさしい洗い方と選び方の傾向づくり</p><span class="soon">COMING SOON</span></div>
-        <div class="tile"><img src="/assets/type-kitchen.svg" alt="" width="56" height="56"><h3>キッチン・水回りのぬめり</h3><p style="font-size:.86rem">食器・シンク・排水まわりの水環境チェック</p><span class="soon">COMING SOON</span></div>
-        <div class="tile"><img src="/assets/type-bath.svg" alt="" width="56" height="56"><h3>お風呂・湯まわりのケア</h3><p style="font-size:.86rem">湯垢・肌のつっぱりから入浴環境を見直す</p><span class="soon">COMING SOON</span></div>
+        <div class="tile reveal"><img src="/assets/type-roomdry.svg" alt="" width="56" height="56"><h3>室内干し・生乾き対策</h3><p style="font-size:.86rem;margin:.2em 0 .5em">干し方・環境・住まいの通気から生乾き臭のリスクを整理</p><span class="soon">COMING SOON</span></div>
+        <div class="tile reveal"><img src="/assets/type-baby.svg" alt="" width="56" height="56"><h3>赤ちゃん・敏感肌の洗濯</h3><p style="font-size:.86rem;margin:.2em 0 .5em">肌にやさしい洗い方と選び方の傾向づくり</p><span class="soon">COMING SOON</span></div>
+        <div class="tile reveal"><img src="/assets/type-kitchen.svg" alt="" width="56" height="56"><h3>キッチン・水回りのぬめり</h3><p style="font-size:.86rem;margin:.2em 0 .5em">食器・シンク・排水まわりの水環境チェック</p><span class="soon">COMING SOON</span></div>
+        <div class="tile reveal"><img src="/assets/type-bath.svg" alt="" width="56" height="56"><h3>お風呂・湯まわりのケア</h3><p style="font-size:.86rem;margin:.2em 0 .5em">湯垢・肌のつっぱりから入浴環境を見直す</p><span class="soon">COMING SOON</span></div>
       </div>
     </div>
   </section>
 
-  <!-- 関連 -->
-  <section>
+  <!-- LINE 導線（暮らしを継続的に見守る入口） -->
+  <section style="padding-top:0">
+    <div class="wrap narrow">
+      <div class="block-line reveal">
+        <p class="eyebrow">LINE でつながる</p>
+        <h2 style="font-size:1.3rem;margin:.1em 0 .4em">暮らしのカルテからのお便り</h2>
+        <p style="margin:.2em 0 1em;color:#33454a">季節のケアのヒント、再診断のタイミング、新しい診断の公開など、暮らしを見守る情報をLINEでゆるやかにお届けします（登録は無料・任意。いつでも解除できます）。</p>
+        <a id="lineBtn" class="btn btn-line" href="#" aria-disabled="true" rel="noopener">LINE で友だち追加</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 関連メディア（回遊＝グループD2C全体のLTV） -->
+  <section style="padding-top:0">
     <div class="wrap narrow">
       <p class="eyebrow center">くらしとからだの、関連メディア</p>
+      <h2 class="center" style="font-size:1.2rem;margin:.2em 0 1em">悩みに合わせて、行き来できます</h2>
       <div id="crossList" class="grid g2"></div>
     </div>
   </section>
@@ -136,8 +206,8 @@
   <section style="padding-top:0">
     <div class="wrap narrow">
       <div class="disclaimer">
-        <p id="discKeihyo"><strong>表現について：</strong>本サイトの表現は景品表示法・薬機法に配慮し、洗浄・消臭・除菌などの効果を断定・誇大にしません。使用感には個人差があります。</p>
-        <p id="discMedical" style="margin-bottom:0"><strong>診断について：</strong>本診断は暮らしの傾向を知るための目安であり、医療診断・治療・特定商品の効果を保証するものではありません。気になる肌症状などは医療機関にご相談ください。</p>
+        <p id="discKeihyo"><strong>表現について：</strong>本サイトの表現は景品表示法・薬機法に配慮し、洗浄・消臭・除菌・防ダニなどの効果を断定・誇大にしません。使用感には個人差があります。</p>
+        <p id="discMedical" style="margin-bottom:0"><strong>診断について：</strong>本診断は暮らしの傾向を知るための目安であり、医療診断・治療・特定商品の効果を保証するものではありません。気になる肌症状・アレルギー症状などは医療機関にご相談ください。</p>
       </div>
     </div>
   </section>
@@ -147,10 +217,14 @@
   <div class="wrap">
     <div class="fnav" style="margin-bottom:10px">
       <a href="/">ホーム</a>
+      <a href="#about">暮らしのカルテとは</a>
+      <a href="#lineup">診断一覧</a>
       <a href="/sentaku/">洗濯・水回り診断</a>
-      <a href="/mizu-kankyo-score/">水環境スコアとは</a>
     </div>
-    <small>暮らしのカルテ（kurashi-carte.jp）／ 運営会社：リブメーカーズ株式会社（LIVmakers co.,ltd.）／ 商品ブランド：マグちゃん<br>© LIVmakers co.,ltd. 本サイトの内容は傾向の目安であり、効果・効能を保証するものではありません。</small>
+    <small>
+      暮らしのカルテ（kurashi-carte.jp）／ 運営：<span id="footOperator">リブメーカーズ株式会社</span>（D2C事業）／ 商品ブランド：マグちゃん<br>
+      <span id="footCopyright">© LIVmakers co.,ltd.</span> 本サイトの内容は暮らしの傾向の目安であり、効果・効能や医療診断を保証するものではありません。
+    </small>
   </div>
 </footer>
 

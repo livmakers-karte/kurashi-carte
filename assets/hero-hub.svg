@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-label="暮らしの悩みをやさしい診断カルテにするイメージ。家と診断票と水滴のキャラクター。">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4FBFB"/><stop offset="1" stop-color="#DCEEF0"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4795B"/><stop offset="1" stop-color="#E15c3f"/>
+    </linearGradient>
+    <linearGradient id="drop2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5EBACE"/><stop offset="1" stop-color="#2C7E92"/>
+    </linearGradient>
+    <radialGradient id="sun2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FDE9A6"/><stop offset="1" stop-color="#F7C948"/>
+    </radialGradient>
+    <linearGradient id="card2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F4FBFC"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="640" fill="url(#sky2)"/>
+  <circle cx="120" cy="118" r="54" fill="url(#sun2)" opacity="0.9"/>
+
+  <!-- floating soft motifs -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <circle cx="250" cy="96" r="12"/><circle cx="300" cy="70" r="7"/>
+    <circle cx="820" cy="150" r="14"/><circle cx="770" cy="96" r="8"/>
+  </g>
+  <g fill="none" stroke="#74B79B" stroke-width="2" opacity="0.5">
+    <circle cx="250" cy="96" r="12"/><circle cx="820" cy="150" r="14"/>
+  </g>
+
+  <!-- ground -->
+  <path d="M0 560 Q480 520 960 560 L960 640 L0 640 Z" fill="#E4F1EA" opacity="0.8"/>
+  <ellipse cx="480" cy="590" rx="360" ry="30" fill="#0E3A47" opacity="0.05"/>
+
+  <!-- cozy house -->
+  <g transform="translate(120 300)">
+    <rect x="40" y="120" width="230" height="150" rx="14" fill="#F7FCFC" stroke="#2C7E92" stroke-width="4"/>
+    <path d="M28 124 L155 42 L282 124 Z" fill="url(#roof)" stroke="#C24a2f" stroke-width="3"/>
+    <!-- chimney with heart smoke -->
+    <rect x="210" y="66" width="24" height="34" rx="4" fill="#E15c3f"/>
+    <path d="M222 60 q10 -10 0 -20" fill="none" stroke="#BFE6EC" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <!-- warm window -->
+    <rect x="70" y="150" width="70" height="70" rx="8" fill="#FDE9A6" stroke="#2C7E92" stroke-width="3"/>
+    <line x1="105" y1="150" x2="105" y2="220" stroke="#2C7E92" stroke-width="3"/>
+    <line x1="70" y1="185" x2="140" y2="185" stroke="#2C7E92" stroke-width="3"/>
+    <!-- door -->
+    <rect x="180" y="176" width="60" height="94" rx="10" fill="#8FD3E0" stroke="#2C7E92" stroke-width="3"/>
+    <circle cx="228" cy="224" r="4" fill="#0E3A47"/>
+  </g>
+
+  <!-- signature: floating diagnostic karte card -->
+  <g transform="translate(520 150) rotate(-5)">
+    <rect x="0" y="0" width="330" height="300" rx="22" fill="url(#card2)" stroke="#CFE6EA" stroke-width="3"/>
+    <!-- card header bar -->
+    <path d="M0 22 Q0 0 22 0 L308 0 Q330 0 330 22 L330 64 L0 64 Z" fill="#0E3A47"/>
+    <circle cx="30" cy="32" r="12" fill="#8FD3E0"/>
+    <text x="52" y="30" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">暮らしのカルテ</text>
+    <text x="52" y="49" font-family="Verdana,sans-serif" font-size="10" letter-spacing="2" fill="#9FD0DA">KURASHI CARTE</text>
+    <!-- ruled body lines -->
+    <g stroke="#DCE8E7" stroke-width="2">
+      <line x1="26" y1="150" x2="304" y2="150"/><line x1="26" y1="182" x2="304" y2="182"/>
+      <line x1="26" y1="214" x2="304" y2="214"/><line x1="26" y1="246" x2="200" y2="246"/>
+    </g>
+    <!-- water-drop score gauge -->
+    <path d="M78 92 C100 122 112 138 112 154 a34 34 0 0 1-68 0 C44 138 56 122 78 92 Z" fill="url(#drop2)"/>
+    <text x="78" y="150" text-anchor="middle" font-family="Verdana,sans-serif" font-size="30" font-weight="800" fill="#FFFFFF">82</text>
+    <text x="150" y="112" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="15" font-weight="700" fill="#0E3A47">あなたの暮らしタイプ</text>
+    <text x="150" y="134" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="13" fill="#67787D">数値で見える化</text>
+    <!-- coral round seal -->
+    <g transform="translate(268 208)">
+      <circle r="34" fill="#F4795B"/>
+      <circle r="34" fill="none" stroke="#FBDDD3" stroke-width="2"/>
+      <text y="-2" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">診断</text>
+      <text y="15" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">完了</text>
+    </g>
+  </g>
+
+  <!-- friendly water-drop mascot waving -->
+  <g transform="translate(360 400)">
+    <path d="M56 0 C96 54 118 84 118 114 a62 62 0 0 1-124 0 C-6 84 16 54 56 0 Z" fill="url(#drop2)"/>
+    <ellipse cx="38" cy="96" rx="16" ry="24" fill="#FFFFFF" opacity="0.35"/>
+    <g fill="#0E3A47"><circle cx="40" cy="108" r="6"/><circle cx="74" cy="108" r="6"/></g>
+    <circle cx="42" cy="106" r="2" fill="#fff"/><circle cx="76" cy="106" r="2" fill="#fff"/>
+    <path d="M48 126 Q57 137 68 126" fill="none" stroke="#0E3A47" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="26" cy="120" r="7" fill="#F4795B" opacity="0.5"/><circle cx="88" cy="120" r="7" fill="#F4795B" opacity="0.5"/>
+  </g>
+
+  <!-- leaves -->
+  <g fill="#74B79B">
+    <path d="M812 470 Q780 440 744 456 Q776 488 812 470 Z"/>
+    <path d="M150 540 Q180 512 218 524 Q188 556 150 540 Z"/>
+  </g>
+</svg>

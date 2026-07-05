@@ -106,8 +106,31 @@ section{padding:56px 0}
 /* ---- GEO answer block ---- */
 .answer{background:#fff; border-left:6px solid var(--tide); border-radius:14px;
   padding:22px 24px; box-shadow:var(--shadow-sm)}
-.answer ul{margin:0; padding-left:1.1em}
+.answer ul{margin:.4em 0 0; padding-left:1.1em}
 .answer li{margin:.5em 0}
+.answer .lead{margin:.2em 0 .2em}
+
+/* ---- 母屋: feature card 内タイポ・接続・近日公開 ---- */
+.card.feature h3{margin:.4em 0 .3em; font-size:1.25rem}
+.card.feature p{margin:.2em 0 .8em; color:#33454a}
+.card.feature .connect{margin:.1em 0 .9em; color:var(--tide); font-size:.86rem; font-weight:700}
+.card.feature.is-soon{background:linear-gradient(180deg,#fff,#f3f8f8); border-style:dashed; border-color:#c8ddda}
+.card.feature.is-soon h3{color:#3b5157}
+.btn-soon{pointer-events:none; opacity:.7; min-height:44px}
+
+/* ---- 母屋: 暮らしのカルテとは（3ステップ）---- */
+.about-steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:8px}
+@media(max-width:760px){ .about-steps{grid-template-columns:1fr} }
+.step{position:relative; background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:24px 22px 20px; box-shadow:var(--shadow-sm)}
+.step-n{display:inline-block; font-family:var(--font-num); letter-spacing:.14em; font-size:.72rem;
+  font-weight:800; color:#fff; background:var(--tide); border-radius:999px; padding:.3em .9em; margin-bottom:.6em}
+.step:nth-child(2) .step-n{background:var(--mint)}
+.step:nth-child(3) .step-n{background:var(--coral)}
+.step h3{font-size:1.08rem; margin:.1em 0 .35em}
+.step p{margin:0; color:#33454a; font-size:.94rem}
+.step::after{content:""; position:absolute; left:22px; bottom:14px; width:34px; height:3px;
+  border-radius:3px; background:var(--aqua)}
 
 /* ---- diagnosis ---- */
 .diag{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg);
