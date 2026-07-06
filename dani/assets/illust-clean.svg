@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="朝日のさす清潔な寝室と、おひさま布団のマスコット">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF0F8"/><stop offset="1" stop-color="#FCF8F1"/>
+    </linearGradient>
+    <linearGradient id="sunray" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3B640" stop-opacity="0.5"/><stop offset="1" stop-color="#F3B640" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="400" height="300" rx="18" fill="url(#wall)"/>
+  <!-- 窓と朝日 -->
+  <rect x="250" y="34" width="112" height="92" rx="8" fill="#DCE8F6" stroke="#5E8CCB" stroke-width="3"/>
+  <line x1="306" y1="34" x2="306" y2="126" stroke="#5E8CCB" stroke-width="2.4"/>
+  <line x1="250" y1="80" x2="362" y2="80" stroke="#5E8CCB" stroke-width="2.4"/>
+  <circle cx="300" cy="70" r="20" fill="#F3B640"/>
+  <g stroke="#F3B640" stroke-width="3" stroke-linecap="round"><line x1="300" y1="40" x2="300" y2="46"/><line x1="326" y1="70" x2="320" y2="70"/><line x1="319" y1="51" x2="315" y2="55"/></g>
+  <polygon points="250,126 362,126 330,220 210,220" fill="url(#sunray)"/>
+  <!-- ベッド／布団 -->
+  <rect x="30" y="176" width="220" height="74" rx="14" fill="#5E8CCB"/>
+  <rect x="30" y="176" width="220" height="30" rx="14" fill="#7CA0C0"/>
+  <rect x="44" y="150" width="70" height="42" rx="12" fill="#FCF8F1" stroke="#E6DECE" stroke-width="2"/>
+  <rect x="120" y="188" width="120" height="18" rx="9" fill="#FCEBCB"/>
+  <!-- ラグ -->
+  <ellipse cx="300" cy="256" rx="74" ry="18" fill="#EEA23C" fill-opacity="0.3"/>
+  <!-- 観葉植物 -->
+  <rect x="356" y="212" width="26" height="30" rx="4" fill="#C7677A" fill-opacity="0.5"/>
+  <path d="M369 212 C356 196 360 182 369 176 C378 182 382 196 369 212 Z" fill="#4E8C6A" fill-opacity="0.55"/>
+  <!-- おひさま布団マスコット（浮遊） -->
+  <g transform="translate(150 96)">
+    <g stroke="#EEA23C" stroke-width="3" stroke-linecap="round"><line x1="0" y1="-40" x2="0" y2="-32"/><line x1="30" y1="-28" x2="25" y2="-23"/><line x1="40" y1="0" x2="32" y2="0"/><line x1="-30" y1="-28" x2="-25" y2="-23"/><line x1="-40" y1="0" x2="-32" y2="0"/></g>
+    <rect x="-30" y="-26" width="60" height="52" rx="18" fill="#FCEBCB" stroke="#EEA23C" stroke-width="4"/>
+    <circle cx="-11" cy="0" r="4" fill="#29396A"/><circle cx="11" cy="0" r="4" fill="#29396A"/>
+    <circle cx="-18" cy="9" r="5" fill="#F5B7A6" fill-opacity="0.85"/><circle cx="18" cy="9" r="5" fill="#F5B7A6" fill-opacity="0.85"/>
+    <path d="M-8 9 q8 8 16 0" fill="none" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- キラキラ（清潔感）＋消えていくハウスダスト -->
+  <g fill="#F3B640"><path d="M96 60 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/><circle cx="220" cy="150" r="2.5"/></g>
+  <g fill="#29396A" fill-opacity="0.18"><circle cx="200" cy="70" r="2.4"/><circle cx="188" cy="52" r="1.8"/><circle cx="212" cy="44" r="1.6"/></g>
+</svg>

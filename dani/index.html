@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- ===== セキュリティ（静的ホスティング用・web-security-baseline 準拠） =====
+     既定は自サイトのみ。Turnstile と GAS 送信先だけ明示許可。秘密情報はHTMLに置かない。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self' https://script.google.com; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#29396A">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 公開前は noindex。go-live時に「index, follow」へ切替＝公開ボタン（config.meta.indexable も true に）。 -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>住まいのダニ・アレルギー診断｜わが家のダニリスク指数を無料でチェック｜暮らしのカルテ</title>
+<meta name="description" content="寝室・寝具・リビング・クローゼット・車——住まいのダニリスクを部屋ごとに『わが家のダニリスク指数』として無料で診断。梅雨〜夏の繁殖期に、どの部屋へ何枚・何ヶ月ごとの対策が必要かを一枚のカルテにして発行します。※リスクの目安で、医療診断ではありません。">
+<link rel="canonical" href="https://kurashi-carte.jp/dani/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="暮らしのカルテ">
+<meta property="og:title" content="わが家のダニ、いま何点？｜住まいのダニ・アレルギー診断">
+<meta property="og:description" content="住まいのダニリスクを部屋ごとに『わが家のダニリスク指数』として無料診断。どの部屋へ何枚・いつ対策すればよいかを一枚のカルテに。">
+<meta property="og:url" content="https://kurashi-carte.jp/dani/">
+<meta property="og:image" content="https://kurashi-carte.jp/dani/assets/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- 構造化データ（本文と一致・フェイクschema禁止）。FAQ/HowTo は config 由来で本文にも可視表示。 -->
+<script type="application/ld+json" id="ld-webapp">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "住まいのダニ・アレルギー診断（わが家のダニリスク指数）",
+  "url": "https://kurashi-carte.jp/dani/",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ja",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "isPartOf": { "@type": "WebSite", "name": "暮らしのカルテ", "url": "https://kurashi-carte.jp/" },
+  "publisher": { "@type": "Organization", "name": "暮らしのカルテ", "legalName": "アートナップ株式会社", "url": "https://kurashi-carte.jp/" },
+  "description": "住まいのダニリスクを寝具・湿度・布物・感受性から部屋ごとに0〜100の指数で診断し、部屋別の必要枚数の目安をカルテとして発行するブラウザ内チェック。医療診断ではありません。"
+}
+</script>
+<script type="application/ld+json" id="ld-breadcrumb">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "暮らしのカルテ", "item": "https://kurashi-carte.jp/" },
+    { "@type": "ListItem", "position": 2, "name": "住まいのダニ・アレルギー診断", "item": "https://kurashi-carte.jp/dani/" }
+  ]
+}
+</script>
+<script type="application/ld+json" id="ld-webpage">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://kurashi-carte.jp/dani/",
+  "name": "住まいのダニ・アレルギー診断｜わが家のダニリスク指数",
+  "inLanguage": "ja",
+  "isPartOf": { "@type": "WebSite", "name": "暮らしのカルテ", "url": "https://kurashi-carte.jp/" },
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#answerBlock", "#faqList"] },
+  "about": { "@type": "Thing", "name": "住まいのダニリスクと部屋別の対策" }
+}
+</script>
+<script type="application/ld+json" id="ld-faq"></script>
+<script type="application/ld+json" id="ld-howto"></script>
+
+<style>
+  :root{
+    --indigo:#29396A; --indigo-2:#3A4E86; --sky:#5E8CCB; --sky-soft:#EAF0F8;
+    --linen:#FCF8F1; --linen-2:#F1EBDD; --line:#E6DECE; --line-2:#EDE7DA;
+    --amber:#EEA23C; --amber-2:#D98A26; --rose:#C7677A; --rose-2:#B0546A;
+    --ink:#2A2E3A; --muted:#6E7180; --ok:#4E8C6A; --alert:#C7677A;
+    --radius:14px;
+    --disp:"Yu Gothic UI","BIZ UDPGothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+    --sans:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;
+    --num:"Bahnschrift","DIN Alternate","Yu Gothic UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;font-family:var(--sans);color:var(--ink);line-height:1.8;font-size:16px;letter-spacing:.01em;
+    background:
+      radial-gradient(1100px 500px at 88% -8%, rgba(238,162,60,.10), transparent 60%),
+      radial-gradient(760px 460px at -6% 3%, rgba(94,140,203,.10), transparent 58%),
+      /* ハウスダストの極薄ドット透かし */
+      radial-gradient(rgba(41,57,106,.05) 1.1px, transparent 1.2px) 0 0/22px 22px,
+      var(--linen);
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px;width:100%}
+  h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.42;color:var(--indigo);letter-spacing:.01em}
+  a{color:var(--indigo-2)}
+  .small{font-size:13px;color:var(--muted);line-height:1.7}
+  .center{text-align:center}
+  .num{font-family:var(--num);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:8px;top:8px;position:fixed;z-index:99;background:#fff;padding:8px 12px;border:2px solid var(--indigo);border-radius:8px}
+
+  /* header */
+  header.site{background:var(--indigo);color:#fff}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none}
+  .brand .emblem{width:34px;height:34px;flex:0 0 auto}
+  .brand .txt{display:flex;flex-direction:column;line-height:1.15}
+  .brand .mark{font-family:var(--disp);font-size:17px;font-weight:800;letter-spacing:.02em}
+  .brand .sub{font-size:10.5px;color:#b9c6e2;letter-spacing:.06em}
+  header.site .home-link{color:#c3cee8;text-decoration:none;font-size:12.5px;display:inline-flex;align-items:center;gap:5px}
+  header.site .home-link:hover{color:#fff}
+
+  /* season banner */
+  .seasonbar{background:linear-gradient(90deg,var(--amber),#f0b45a);color:#4a3410;font-size:12.5px;font-weight:700;text-align:center;padding:7px 16px;letter-spacing:.02em}
+  .seasonbar .em{background:rgba(255,255,255,.5);border-radius:20px;padding:1px 9px;margin-right:7px;font-size:11.5px}
+
+  /* hero */
+  .hero{color:#fff;position:relative;overflow:hidden;background:linear-gradient(158deg,#26346180 0%,#26346100 60%),linear-gradient(158deg,var(--indigo),#20305c)}
+  .hero .wrap{display:grid;grid-template-columns:1.14fr .86fr;gap:26px;align-items:center;position:relative;z-index:2;padding:50px 20px 46px}
+  @media(max-width:760px){.hero .wrap{grid-template-columns:1fr;gap:12px;padding:36px 20px 34px}}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.4px);background-size:26px 26px}
+  .hero .eyebrow{color:#ffd9a1;font-size:12px;letter-spacing:.08em;font-weight:700;margin:0 0 15px;display:inline-flex;align-items:center;gap:9px}
+  .hero .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--amber)}
+  .hero h1{color:#fff;font-size:clamp(28px,6vw,45px);margin:0 0 16px;line-height:1.34;letter-spacing:.01em}
+  .hero h1 .accent{color:#ffce87}
+  .hero p.lead{color:#dfe6f4;font-size:clamp(14.5px,2.3vw,16.5px);margin:0 0 22px;max-width:40em}
+  .hero .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--amber);color:#3a2a08;
+    font-weight:800;text-decoration:none;padding:16px 28px;border-radius:12px;font-size:16px;min-height:54px;box-shadow:0 12px 26px rgba(238,162,60,.34)}
+  .hero .cta::after{content:"→";font-weight:800}
+  .hero .cta:active{transform:translateY(1px)}
+  .hero .cta:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .hero .metaline{color:#9fb0d6;font-size:11.5px;margin-top:13px}
+  .hero-art{justify-self:center;width:100%;max-width:330px}
+  @media(max-width:760px){.hero-art{max-width:280px;order:2}}
+  .hero-illust{width:100%;height:auto;display:block;filter:drop-shadow(0 16px 26px rgba(0,0,0,.24))}
+  .float{animation:float 5.5s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+  /* GEO 直接回答 */
+  .answer{background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:var(--radius);padding:19px 22px;margin:26px 0}
+  .answer .k{font-size:12px;letter-spacing:.06em;color:var(--amber-2);font-weight:800;margin:0 0 8px;display:flex;align-items:center;gap:7px}
+  .answer .k::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  .answer p{margin:0;font-size:14.5px;color:var(--ink)}
+
+  section{padding:32px 0}
+  section h2{font-size:clamp(20px,3.6vw,26px);margin:0 0 6px;position:relative;padding-left:15px}
+  section h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:4px;border-radius:3px;background:linear-gradient(180deg,var(--amber),var(--sky))}
+  .sec-sub{color:var(--muted);font-size:14px;margin:0 0 22px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* card / wizard */
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(41,57,106,.07)}
+  .card-pad{padding:24px}
+  @media(min-width:640px){.card-pad{padding:30px 34px}}
+  #wizard{position:relative;overflow:hidden}
+  #wizard::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--amber) 55%,var(--rose))}
+
+  .stepbar{display:flex;gap:6px;margin:4px 0 20px}
+  .stepbar .seg{flex:1;height:6px;border-radius:4px;background:var(--line)}
+  .stepbar .seg.on{background:var(--amber)}
+  .stepbar .seg.done{background:var(--indigo)}
+  .steplabel{font-size:12px;color:var(--muted);letter-spacing:.04em;margin:0 0 4px;font-weight:700}
+  .step > h3{font-size:19px;margin:0 0 6px}
+  .step .hint{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+
+  .q{border:0;padding:0;margin:0 0 20px}
+  .q .ql{font-size:14.5px;font-weight:800;color:var(--ink);margin:0 0 10px;padding:0}
+  .opts{display:grid;gap:9px}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .opts.three{grid-template-columns:1fr 1fr 1fr}
+  @media(max-width:480px){.opts.two,.opts.three{grid-template-columns:1fr}}
+  .opt{display:flex;align-items:center;gap:11px;border:1.5px solid var(--line);border-radius:11px;padding:13px 15px;cursor:pointer;
+    background:#fff;transition:border-color .12s,background .12s,box-shadow .12s;min-height:50px}
+  .opt:hover{border-color:var(--sky);background:var(--sky-soft)}
+  .opt.sel{border-color:var(--indigo);background:#eef2fa;box-shadow:inset 0 0 0 1.5px rgba(41,57,106,.25)}
+  .opt input{accent-color:var(--indigo);width:18px;height:18px;flex:0 0 auto}
+  .opt:focus-within{outline:2px solid var(--indigo);outline-offset:1px}
+  .opt .t{font-size:14.5px}
+
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+  .btn{appearance:none;border:0;border-radius:12px;font-weight:800;font-size:15px;padding:14px 22px;min-height:52px;cursor:pointer;font-family:var(--disp)}
+  .btn.primary{background:var(--indigo);color:#fff}
+  .btn.primary:disabled{opacity:.36;cursor:not-allowed}
+  .btn.amber{background:var(--amber);color:#3a2a08}
+  .btn.ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--line)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+  .err{color:var(--alert);font-size:13px;margin-top:8px;min-height:18px}
+  .notice{background:#fbf3e4;border:1px solid #eeddbe;border-radius:10px;padding:13px 15px;font-size:12.5px;color:#6a5426;line-height:1.7}
+
+  /* ===== 結果＝ダニ予報カード（シグネチャー） ===== */
+  .resultwrap{display:none}
+  .forecast{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 16px 44px rgba(41,57,106,.14);position:relative}
+  .forecast-top{background:linear-gradient(120deg,var(--indigo),#33477e);color:#fff;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .forecast-top::after{content:"";position:absolute;right:-30px;top:-40px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(238,162,60,.34),transparent 70%)}
+  .forecast-top .tt{display:flex;align-items:center;gap:11px;position:relative;z-index:1}
+  .forecast-top .emblem{width:30px;height:30px}
+  .forecast-top .lab{font-family:var(--disp);font-size:15px;letter-spacing:.02em;font-weight:800}
+  .forecast-top .lab small{display:block;font-family:var(--sans);font-size:10px;color:#b9c6e2;letter-spacing:.12em;font-weight:400}
+  .forecast-top .meta{text-align:right;font-size:11px;color:#c3cee8;line-height:1.5;position:relative;z-index:1}
+  .forecast-top .meta .num{font-size:12.5px;color:#ffce87}
+  .forecast-body{padding:22px}
+  @media(min-width:640px){.forecast-body{padding:26px 30px}}
+  .fc-issue{animation:issue .7s cubic-bezier(.2,.8,.25,1) both}
+  @keyframes issue{0%{opacity:0;transform:translateY(26px) scale(.985)}100%{opacity:1;transform:none}}
+
+  /* season chip */
+  .seasonchip{display:inline-flex;align-items:center;gap:7px;background:var(--linen-2);border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:12px;color:#6a5426;font-weight:700;margin:0 0 16px}
+  .seasonchip.peak{background:#fbe6e9;border-color:#eec3cc;color:var(--rose-2)}
+  .seasonchip .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  .seasonchip.peak .dot{background:var(--rose)}
+
+  /* index gauge + mascot */
+  .idxrow{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .idxmain{flex:1;min-width:220px}
+  .idxcap{font-size:12.5px;color:var(--muted);letter-spacing:.02em;margin:0 0 4px;font-weight:700}
+  .idxbig{display:flex;align-items:flex-end;gap:10px;margin:0 0 12px}
+  .idxbig .val{font-family:var(--num);font-size:clamp(56px,16vw,86px);font-weight:700;line-height:.82;color:var(--indigo)}
+  .idxbig .u{font-size:15px;color:var(--muted);margin-bottom:9px}
+  .idxbig .bandlab{margin-left:auto;font-family:var(--disp);font-weight:800;font-size:clamp(17px,4vw,22px);padding:4px 14px;border-radius:12px;color:#fff;align-self:center}
+  .gauge{height:15px;border-radius:9px;background:linear-gradient(90deg,#5E8CCB,#7CA0C0 28%,#EEA23C 58%,#DE8A5A 78%,#C7677A);position:relative;overflow:visible;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+  .gauge .needle{position:absolute;top:-6px;left:0;width:5px;height:27px;background:#26346a;border-radius:3px;box-shadow:0 0 0 2px #fff,0 3px 6px rgba(0,0,0,.28);transition:left 1.25s cubic-bezier(.2,.75,.2,1)}
+  .gscale{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-top:7px}
+  .prevdelta{font-size:12.5px;color:var(--indigo-2);margin-top:10px;background:var(--sky-soft);border-radius:9px;padding:8px 12px;display:none}
+  .prevdelta b{color:var(--amber-2)}
+  .mascot{flex:0 0 auto;width:118px;text-align:center}
+  .mascot svg{width:106px;height:106px;display:inline-block}
+  .mascot .mlab{font-size:11px;color:var(--muted);margin:2px 0 0}
+  @media(max-width:520px){.mascot{width:92px}.mascot svg{width:84px;height:84px}}
+
+  .idxadvice{border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:20px 0 0;background:#fdfaf4;font-size:14px;color:#3f4351}
+  .idxadvice .lead{font-weight:800;color:var(--indigo);margin:0 0 4px;font-size:13.5px;display:flex;align-items:center;gap:7px}
+  .idxadvice .lead::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  .explainlink{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--indigo-2);text-decoration:none;margin-top:10px;font-weight:700}
+  .explainlink::after{content:"→"}
+
+  /* type + seal */
+  .typebox{display:flex;align-items:center;gap:16px;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line);flex-wrap:wrap}
+  .seal-stamp{flex:0 0 auto;width:82px;height:82px;border-radius:16px;border:2.5px solid var(--amber);color:var(--amber-2);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    font-family:var(--disp);transform:rotate(-5deg);background:#fdf6ea}
+  .seal-stamp .sl{font-size:9px;letter-spacing:.08em;opacity:.9}
+  .seal-stamp .st{font-size:17px;font-weight:800;line-height:1.1;margin-top:2px}
+  .seal-anim{animation:stamp .5s cubic-bezier(.2,.9,.3,1.2) both}
+  @keyframes stamp{0%{opacity:0;transform:rotate(-5deg) scale(1.5)}60%{opacity:1}100%{opacity:1;transform:rotate(-5deg) scale(1)}}
+  .typebox .ti{flex:1;min-width:200px}
+  .typebox .tk{font-size:12px;color:var(--muted);letter-spacing:.02em;margin:0 0 2px;font-weight:700}
+  .typebox .tn{font-family:var(--disp);font-size:clamp(20px,4.2vw,26px);color:var(--indigo);font-weight:800;margin:0}
+  .typebox .ts{font-size:12.5px;color:var(--indigo-2);margin:4px 0 0}
+
+  /* axis bars */
+  .axes{margin:20px 0 0}
+  .axes .ah{font-size:12.5px;color:var(--muted);letter-spacing:.02em;margin:0 0 12px;font-weight:700}
+  .axis{display:grid;grid-template-columns:150px 1fr 40px;align-items:center;gap:10px;margin:0 0 9px;font-size:12.5px}
+  @media(max-width:480px){.axis{grid-template-columns:112px 1fr 34px}}
+  .axis .an{color:var(--ink)}
+  .axis .at{height:10px;border-radius:6px;background:var(--linen-2);border:1px solid var(--line);overflow:hidden}
+  .axis .af{height:100%;width:0;background:var(--sky);border-radius:6px;transition:width .9s ease}
+  .axis.dom .af{background:var(--amber)}
+  .axis .av{text-align:right;color:var(--muted);font-family:var(--num)}
+
+  /* room prescription map */
+  .rooms{margin:22px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .rooms .rh{background:var(--linen-2);padding:13px 16px;font-family:var(--disp);font-weight:800;font-size:14.5px;color:var(--indigo);display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .rooms .rh .total{font-size:12.5px;color:var(--amber-2);font-weight:800}
+  .rooms .rh .total b{font-family:var(--num);font-size:19px}
+  .roomlist{padding:6px 16px 14px}
+  .room{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px dashed var(--line);opacity:.25;transform:translateX(-6px);transition:opacity .4s ease,transform .4s ease}
+  .room.on{opacity:1;transform:none}
+  .room:last-child{border-bottom:0}
+  .room .ri{width:38px;height:38px;flex:0 0 auto;border-radius:10px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center}
+  .room .ri svg{width:23px;height:23px}
+  .room .rn{flex:1;min-width:0}
+  .room .rnm{font-weight:800;font-size:14px;color:var(--ink);margin:0}
+  .room .rnote{font-size:11.5px;color:var(--muted);margin:1px 0 0}
+  .room .rq{flex:0 0 auto;text-align:right}
+  .room .rq .n{font-family:var(--num);font-size:22px;font-weight:700;color:var(--indigo)}
+  .room .rq .un{font-size:11px;color:var(--muted);margin-left:2px}
+  .room.pri .ri{background:#fdf0dc}
+  .room.pri .rq .n{color:var(--amber-2)}
+  .roomnote{font-size:11.5px;color:var(--muted);padding:0 16px 14px;margin:0}
+
+  /* finding / approach blocks */
+  .kbox{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:20px 0 0;background:#fdfaf4}
+  .kbox .kt{font-family:var(--disp);font-size:14.5px;color:var(--indigo);margin:0 0 7px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .kbox .kt::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);flex:0 0 auto}
+  .kbox p{margin:0;font-size:13.5px;color:#3f4351}
+  .kbox.season{background:linear-gradient(180deg,#fef6ea,#fbeede);border-color:#eedcbd}
+
+  /* products */
+  .prodnote{font-size:12.5px;color:#4a4e5a;margin:12px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:11px;background:#fff}
+  .prodnote .pn{font-family:var(--disp);font-weight:800;color:var(--indigo);font-size:14px;margin:0 0 4px;display:flex;align-items:center;gap:8px}
+  .pcat{display:inline-block;font-size:10.5px;color:var(--amber-2);border:1px solid rgba(238,162,60,.5);border-radius:20px;padding:1px 9px;margin-left:auto}
+
+  /* offer + CTA */
+  .offer{background:linear-gradient(165deg,#29396A,#20305c);color:#fff;border-radius:16px;padding:22px;margin:22px 0 0;position:relative;overflow:hidden}
+  .offer::before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(238,162,60,.22),transparent 70%)}
+  .offer h3{color:#fff;font-size:19px;margin:0 0 8px;position:relative}
+  .offer p{color:#d7deee;font-size:13.5px;margin:0 0 6px;position:relative}
+  .offer .plan{display:inline-flex;align-items:center;gap:8px;background:rgba(238,162,60,.18);border:1px solid rgba(238,162,60,.5);color:#ffd9a1;
+    font-size:12.5px;font-weight:800;padding:7px 13px;border-radius:20px;margin:8px 0 14px;position:relative}
+  .ctas{display:flex;flex-direction:column;gap:10px;position:relative}
+  .ctabtn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;padding:15px 18px;border-radius:12px;min-height:52px;font-size:15px;font-family:var(--disp)}
+  .ctabtn.main{background:var(--amber);color:#3a2a08}
+  .ctabtn.line{background:#06C755;color:#fff}
+  .ctabtn.ghost{background:transparent;color:#ffd9a1;border:1.5px solid rgba(238,162,60,.5)}
+  .ctabtn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .ctabtn:active{transform:translateY(1px)}
+
+  .disclaimer-box{border:1px solid #e2c6ce;background:#fbf1f3;border-radius:12px;padding:15px 17px;font-size:12.5px;color:#6e3b47;line-height:1.72;margin:20px 0 0}
+  .disclaimer-box strong{color:var(--rose-2)}
+
+  /* recheck */
+  .recheck{border:1.5px dashed var(--amber);border-radius:12px;padding:16px 18px;margin:22px 0 0;background:#fdf6ea}
+  .recheck h3{font-size:16px;margin:0 0 6px;color:var(--indigo)}
+  .recheck p{font-size:13px;color:#4a4e45;margin:0 0 12px}
+
+  /* form */
+  .formcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin:22px 0 0}
+  .formcard h3{font-size:18px;margin:0 0 6px}
+  .field{margin:0 0 15px}
+  .field label{display:block;font-size:14px;font-weight:800;color:var(--ink);margin:0 0 6px}
+  input[type=text],input[type=email],input[type=tel],textarea{width:100%;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);min-height:50px;font-family:var(--sans)}
+  textarea{min-height:92px;resize:vertical}
+  input:focus,textarea:focus{outline:2px solid var(--indigo);outline-offset:1px}
+  .purposes{display:grid;gap:8px;margin:0 0 6px}
+  .pchk{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;font-size:14px;min-height:48px}
+  .pchk input{width:19px;height:19px;accent-color:var(--indigo);flex:0 0 auto}
+  .pchk.sel{border-color:var(--indigo);background:#eef2fa}
+  .grid2{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  @media(max-width:520px){.grid2{grid-template-columns:1fr}}
+  .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+  #turnstile-holder{margin:6px 0 4px}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink);margin:6px 0 14px}
+  .consent input{width:20px;height:20px;margin-top:1px;accent-color:var(--indigo)}
+  .thanks{display:none;text-align:center;padding:14px 0}
+  .thanks .chk{width:56px;height:56px;border-radius:50%;background:#eaf3ee;color:var(--ok);display:inline-flex;align-items:center;justify-content:center;font-size:28px;margin:0 0 10px}
+  .thanks .toThanks{display:inline-flex;margin-top:12px}
+
+  .resfoot{display:flex;gap:12px;justify-content:center;margin:22px 0 0;flex-wrap:wrap}
+
+  /* method / faq */
+  #method{background:linear-gradient(180deg,#fef6ea,#fbeede);border-top:1px solid #eedcbd;border-bottom:1px solid #eedcbd}
+  .steps-ol{counter-reset:s;list-style:none;padding:0;margin:12px 0 0}
+  .steps-ol li{counter-increment:s;position:relative;padding:0 0 14px 46px;color:var(--ink);font-size:14px}
+  .steps-ol li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:10px;background:var(--indigo);color:#fff;font-family:var(--num);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .faq details{border-bottom:1px solid var(--line);padding:4px 0}
+  .faq summary{cursor:pointer;list-style:none;padding:15px 30px 15px 4px;font-weight:800;color:var(--indigo);font-size:15px;position:relative;font-family:var(--disp)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"＋";position:absolute;right:6px;top:14px;color:var(--amber-2);font-weight:800}
+  .faq details[open] summary::after{content:"－"}
+  .faq .a{padding:0 4px 16px;color:var(--ink);font-size:14px;line-height:1.85}
+
+  /* 透かし背景レイヤー（assets/watermark.svg・ローカル同梱・淡い世界観） */
+  .wm{position:fixed;inset:0;z-index:-1;background:url("assets/watermark.svg") 0 0/180px repeat;opacity:.55;pointer-events:none}
+  /* 見守りバンド（長期関係のトーン＋清潔な寝室イラスト） */
+  .watch{margin:8px 0 0}
+  .watch .inner{background:linear-gradient(120deg,#fff,#f6f0e4);border:1px solid var(--line);border-radius:18px;padding:22px 24px;display:flex;gap:22px;align-items:center;box-shadow:0 10px 30px rgba(41,57,106,.06)}
+  .watch .illust{flex:0 0 auto;width:230px;max-width:44%}
+  .watch .illust img{width:100%;height:auto;display:block}
+  .watch .cp .eb{font-size:11.5px;letter-spacing:.14em;color:var(--amber-2);font-weight:800;margin:0 0 6px}
+  .watch .cp h3{font-size:clamp(18px,3.4vw,22px);margin:0 0 8px;color:var(--indigo)}
+  .watch .cp p{font-size:13.5px;color:#4a4e5a;margin:0}
+  @media(max-width:620px){.watch .inner{flex-direction:column;align-items:flex-start;gap:14px}.watch .illust{width:70%;max-width:240px;align-self:center}}
+  footer.site{background:var(--indigo);color:#c3cee8;padding:28px 0;margin-top:8px;font-size:12.5px}
+  footer.site a{color:#dbe3f2}
+  footer.site .foot-brand{font-family:var(--disp);font-weight:800;color:#fff;font-size:15px;margin:0 0 6px}
+  footer .foot-discl{font-size:11.5px;color:#9fb0d6;line-height:1.7;margin:10px 0 0}
+  footer .foot-links{margin:10px 0 0;display:flex;gap:16px;flex-wrap:wrap}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media print{
+    header.site,.seasonbar,.hero,.answer,#shindan .sec-sub,#shindan>.wrap>h2,#wizard,.formcard,.recheck,.offer,.resfoot,#method,#faq,footer.site,.home-link,.explainlink{display:none!important}
+    body{background:#fff}
+    .resultwrap{display:block!important}
+    .forecast{box-shadow:none;border:1px solid #999}
+  }
+</style>
+</head>
+<body>
+<div class="wm" aria-hidden="true"></div>
+<a class="skip" href="#shindan">診断へスキップ</a>
+
+<!-- ===== インラインSVG 意匠（外部依存なし） ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- エンブレム：家＋カルテ＋おひさま -->
+    <symbol id="emblem" viewBox="0 0 100 100">
+      <path d="M50 16 L82 42 V84 H18 V42 Z" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round"/>
+      <rect x="38" y="58" width="24" height="26" fill="none" stroke="#fff" stroke-width="3"/>
+      <circle cx="50" cy="40" r="10" fill="#EEA23C"/>
+      <g stroke="#EEA23C" stroke-width="2.4" stroke-linecap="round"><line x1="50" y1="22" x2="50" y2="27"/><line x1="66" y1="40" x2="61" y2="40"/><line x1="61" y1="29" x2="58" y2="32"/></g>
+    </symbol>
+    <symbol id="emblem-ind" viewBox="0 0 100 100">
+      <path d="M50 16 L82 42 V84 H18 V42 Z" fill="none" stroke="#29396A" stroke-width="3.4" stroke-linejoin="round"/>
+      <rect x="38" y="58" width="24" height="26" fill="none" stroke="#29396A" stroke-width="3"/>
+      <circle cx="50" cy="40" r="10" fill="#EEA23C"/>
+      <g stroke="#EEA23C" stroke-width="2.4" stroke-linecap="round"><line x1="50" y1="22" x2="50" y2="27"/><line x1="66" y1="40" x2="61" y2="40"/></g>
+    </symbol>
+
+    <!-- お天気マスコット「ひなたちゃん」＝おひさま布団（5表情） -->
+    <symbol id="mascot-sunny" viewBox="0 0 120 120">
+      <g stroke="#EEA23C" stroke-width="3.4" stroke-linecap="round"><line x1="60" y1="10" x2="60" y2="20"/><line x1="98" y1="22" x2="91" y2="29"/><line x1="110" y1="60" x2="100" y2="60"/><line x1="22" y1="22" x2="29" y2="29"/><line x1="10" y1="60" x2="20" y2="60"/></g>
+      <rect x="24" y="30" width="72" height="64" rx="20" fill="#FCEBCB" stroke="#EEA23C" stroke-width="3.5"/>
+      <path d="M24 74 q36 16 72 0" fill="none" stroke="#EEA23C" stroke-width="2.6" opacity=".7"/>
+      <circle cx="47" cy="58" r="4.6" fill="#29396A"/><circle cx="73" cy="58" r="4.6" fill="#29396A"/>
+      <circle cx="40" cy="68" r="5.5" fill="#F5B7A6" opacity=".8"/><circle cx="80" cy="68" r="5.5" fill="#F5B7A6" opacity=".8"/>
+      <path d="M52 68 q8 8 16 0" fill="none" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mascot-smile" viewBox="0 0 120 120">
+      <g stroke="#EEA23C" stroke-width="3.2" stroke-linecap="round" opacity=".85"><line x1="60" y1="12" x2="60" y2="21"/><line x1="106" y1="60" x2="98" y2="60"/><line x1="14" y1="60" x2="22" y2="60"/></g>
+      <rect x="24" y="32" width="72" height="62" rx="20" fill="#FCEBCB" stroke="#EEA23C" stroke-width="3.5"/>
+      <path d="M24 74 q36 16 72 0" fill="none" stroke="#EEA23C" stroke-width="2.6" opacity=".7"/>
+      <circle cx="47" cy="60" r="4.4" fill="#29396A"/><circle cx="73" cy="60" r="4.4" fill="#29396A"/>
+      <circle cx="40" cy="70" r="5" fill="#F5B7A6" opacity=".7"/><circle cx="80" cy="70" r="5" fill="#F5B7A6" opacity=".7"/>
+      <path d="M53 70 q7 6 14 0" fill="none" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mascot-neutral" viewBox="0 0 120 120">
+      <path d="M18 40 a10 10 0 0 1 10 -8 h4" fill="none" stroke="#c9cdd8" stroke-width="3" stroke-linecap="round"/>
+      <rect x="24" y="34" width="72" height="60" rx="20" fill="#F6EEDD" stroke="#DE8A5A" stroke-width="3.5"/>
+      <circle cx="47" cy="60" r="4.4" fill="#29396A"/><circle cx="73" cy="60" r="4.4" fill="#29396A"/>
+      <circle cx="40" cy="70" r="4.6" fill="#F5B7A6" opacity=".6"/><circle cx="80" cy="70" r="4.6" fill="#F5B7A6" opacity=".6"/>
+      <line x1="53" y1="72" x2="67" y2="72" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mascot-worried" viewBox="0 0 120 120">
+      <g stroke="#9fb0d6" stroke-width="3" stroke-linecap="round"><line x1="94" y1="30" x2="99" y2="25"/><line x1="100" y1="38" x2="106" y2="36"/></g>
+      <rect x="24" y="34" width="72" height="60" rx="20" fill="#F4E8DA" stroke="#DE8A5A" stroke-width="3.5"/>
+      <path d="M41 55 q6 -4 12 0M67 55 q6 -4 12 0" fill="none" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="47" cy="61" r="4.2" fill="#29396A"/><circle cx="73" cy="61" r="4.2" fill="#29396A"/>
+      <path d="M53 74 q7 -6 14 0" fill="none" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mascot-sweat" viewBox="0 0 120 120">
+      <rect x="24" y="34" width="72" height="60" rx="20" fill="#F1E3D6" stroke="#C7677A" stroke-width="3.5"/>
+      <path d="M40 54 l12 5M80 54 l-12 5" stroke="#29396A" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <circle cx="47" cy="62" r="4.2" fill="#29396A"/><circle cx="73" cy="62" r="4.2" fill="#29396A"/>
+      <path d="M52 76 q8 -7 16 0" fill="none" stroke="#29396A" stroke-width="3" stroke-linecap="round"/>
+      <path d="M95 46 q5 8 0 12 a4 4 0 0 1 -8 -2 q1 -6 8 -10z" fill="#5E8CCB"/>
+    </symbol>
+
+    <!-- 部屋アイコン -->
+    <symbol id="rm-bed" viewBox="0 0 24 24"><g stroke="#29396A" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8v10M3 18h18v-5a3 3 0 0 0-3-3H9v3H3"/><path d="M6 10.5V10a1 1 0 0 1 1-1h0"/></g></symbol>
+    <symbol id="rm-room" viewBox="0 0 24 24"><g stroke="#29396A" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><path d="M8 20v-5h8v5"/></g></symbol>
+    <symbol id="rm-sofa" viewBox="0 0 24 24"><g stroke="#29396A" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M3 12a2 2 0 0 1 2 2v3h14v-3a2 2 0 0 1 2-2"/><path d="M6 17v2M18 17v2"/></g></symbol>
+    <symbol id="rm-closet" viewBox="0 0 24 24"><g stroke="#29396A" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="21"/><circle cx="10" cy="12" r="0.8" fill="#29396A"/><circle cx="14" cy="12" r="0.8" fill="#29396A"/></g></symbol>
+    <symbol id="rm-car" viewBox="0 0 24 24"><g stroke="#29396A" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><path d="M3 11h18v5H3z"/><circle cx="7" cy="16.5" r="1.6"/><circle cx="17" cy="16.5" r="1.6"/></g></symbol>
+
+    <symbol id="ic-sheet" viewBox="0 0 24 24"><g stroke="#29396A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></g></symbol>
+  </defs>
+</svg>
+
+<div class="seasonbar" id="seasonBar" style="display:none"><span class="em" id="seasonBarEm">今</span><span id="seasonBarMsg"></span></div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="emblem" aria-hidden="true"><use href="#emblem"/></svg>
+      <span class="txt"><span class="mark" id="brandMark">住まいのダニ・カルテ</span><span class="sub" id="brandSub">住まいのダニ・アレルギー診断</span></span>
+    </a>
+    <a class="home-link" href="/" id="hubLink">← 暮らしのカルテ</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow" id="heroEyebrow">梅雨〜夏は、ダニがいちばん増える季節</p>
+      <h1 id="heroTitle">わが家のダニ、<br><span class="accent">いま何点？</span></h1>
+      <p class="lead" id="heroLead"></p>
+      <a class="cta" href="#shindan" id="heroCta">無料でダニ予報カードを発行（約1分）</a>
+      <p class="metaline" id="heroMeta"></p>
+    </div>
+    <div class="hero-art">
+      <!-- ヒーロー図版：住まいの断面＋おひさま布団＋舞うハウスダスト（線画SVG・外部画像なし） -->
+      <svg class="hero-illust float" viewBox="0 0 330 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="20" y="34" width="290" height="250" rx="20" fill="rgba(255,255,255,.05)" stroke="rgba(255,206,135,.3)"/>
+        <!-- 家の断面 -->
+        <path d="M60 150 L165 78 L270 150 V250 H60 Z" fill="rgba(255,255,255,.05)" stroke="rgba(200,214,240,.5)" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="60" y1="200" x2="270" y2="200" stroke="rgba(200,214,240,.35)" stroke-width="1.5"/>
+        <!-- 布団（寝具） -->
+        <rect x="82" y="212" width="78" height="30" rx="8" fill="#5E8CCB" opacity=".5"/>
+        <rect x="176" y="212" width="70" height="30" rx="8" fill="#5E8CCB" opacity=".35"/>
+        <!-- カーペット -->
+        <rect x="82" y="164" width="60" height="26" rx="5" fill="#EEA23C" opacity=".3"/>
+        <!-- おひさま布団マスコット -->
+        <g transform="translate(165 128)"><use href="#mascot-sunny" x="-52" y="-52" width="104" height="104"/></g>
+        <!-- 舞うハウスダスト -->
+        <g fill="#ffce87"><circle cx="240" cy="96" r="3"/><circle cx="255" cy="120" r="2"/><circle cx="90" cy="110" r="2.4"/><circle cx="112" cy="92" r="1.8"/><circle cx="285" cy="180" r="2"/></g>
+        <!-- 指数チップ -->
+        <g transform="translate(214 210)">
+          <rect x="0" y="0" width="86" height="52" rx="11" fill="#fff" stroke="#E6DECE"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="8" fill="#6E7180">ダニリスク指数</text>
+          <text x="10" y="44" font-family="Bahnschrift,sans-serif" font-size="30" fill="#29396A" font-weight="700">62</text>
+          <text x="60" y="44" font-family="sans-serif" font-size="9" fill="#6E7180">点</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="answer" id="answerBlock">
+    <p class="k">結論から：ダニはどこに多く、何枚・何ヶ月ごとの対策が必要？</p>
+    <p id="directAnswer">読み込み中…</p>
+  </div>
+</div>
+
+<!-- ===== 診断 ===== -->
+<section id="shindan">
+  <div class="wrap">
+    <h2>わが家のダニリスク診断</h2>
+    <p class="sec-sub">部屋のことに答えるだけ。約1分で、部屋別のダニ予報カードを発行します。</p>
+
+    <div class="card card-pad" id="wizard">
+      <div class="stepbar" id="stepbar" aria-hidden="true"></div>
+      <div id="steps"></div>
+      <div class="nav">
+        <button class="btn ghost" id="btnBack" type="button" style="visibility:hidden">戻る</button>
+        <button class="btn primary" id="btnNext" type="button" disabled>次へ</button>
+      </div>
+    </div>
+
+    <!-- ===== 結果＝ダニ予報カード ===== -->
+    <div class="resultwrap" id="resultwrap">
+      <div class="forecast" id="forecast">
+        <div class="forecast-top">
+          <div class="tt">
+            <svg class="emblem" aria-hidden="true"><use href="#emblem"/></svg>
+            <span class="lab">ダニ予報カード<small>DANI FORECAST ／ HOME CARTE</small></span>
+          </div>
+          <div class="meta">
+            <div>カルテ番号 <span class="num" id="karteNo">—</span></div>
+            <div>発行日 <span class="num" id="karteDate">—</span></div>
+          </div>
+        </div>
+        <div class="forecast-body">
+          <div class="seasonchip" id="seasonChip"><span class="dot"></span><span id="seasonChipTxt">—</span></div>
+
+          <div class="idxrow">
+            <div class="idxmain">
+              <p class="idxcap" id="idxCap">わが家のダニリスク指数（目安）</p>
+              <div class="idxbig">
+                <span class="val num" id="idxVal">–</span><span class="u">/100点</span>
+                <span class="bandlab" id="bandLab">—</span>
+              </div>
+              <div class="gauge"><div class="needle" id="idxNeedle"></div></div>
+              <div class="gscale"><span>ひかえめ</span><span>ふつう</span><span>多め</span><span>要注意</span><span>ピーク</span></div>
+              <div class="prevdelta" id="prevDelta"></div>
+            </div>
+            <div class="mascot">
+              <svg id="mascotSvg" aria-hidden="true"><use href="#mascot-smile" id="mascotUse"/></svg>
+              <p class="mlab" id="mascotLab">ひなたちゃん</p>
+            </div>
+          </div>
+
+          <div class="idxadvice">
+            <p class="lead">今日のダニ予報</p>
+            <p id="bandAdvice"></p>
+            <a class="explainlink" id="explainLink" href="shisuu/">指数の見かたを詳しく</a>
+          </div>
+
+          <div class="typebox">
+            <div class="seal-stamp" id="sealStamp"><span class="sl">住まいのタイプ</span><span class="st" id="sealText">—</span></div>
+            <div class="ti">
+              <p class="tk">あなたの住まいのダニタイプ（傾向）</p>
+              <p class="tn" id="typeName">—</p>
+              <p class="ts" id="typeSub"></p>
+            </div>
+          </div>
+
+          <div class="axes">
+            <p class="ah">リスクの内訳（条件別・目安）</p>
+            <div id="axisBars"></div>
+          </div>
+
+          <!-- 部屋別 必要枚数マップ（処方・客単価の根拠） -->
+          <div class="rooms">
+            <div class="rh"><span>部屋別・ダニ取りシートの必要枚数（目安）</span><span class="total">合計 <b id="totalSheets">–</b> 枚</span></div>
+            <div class="roomlist" id="roomList"></div>
+            <p class="roomnote" id="roomNote"></p>
+          </div>
+
+          <div class="kbox">
+            <p class="kt">診断のまとめ（傾向の目安）</p>
+            <p id="findingText"></p>
+          </div>
+
+          <div class="kbox season">
+            <p class="kt" id="seasonBoxTitle">季節のこと</p>
+            <p id="seasonBoxText"></p>
+          </div>
+
+          <div class="kbox">
+            <p class="kt">あなたのタイプに合う対策の方向</p>
+            <p id="approachText"></p>
+            <div class="prodnote">
+              <p class="pn"><svg aria-hidden="true" style="width:20px;height:20px"><use href="#ic-sheet"/></svg><span id="aprosName">Apros ダニ取りシート</span><span class="pcat" id="aprosCat">対策シート（雑貨）</span></p>
+              <p style="margin:0" id="aprosIntro"></p>
+            </div>
+          </div>
+
+          <div class="disclaimer-box" id="resultDisclaimer"></div>
+        </div>
+      </div>
+
+      <!-- オファー＋Apros 導線（部屋別の枚数で客単価最大化） -->
+      <div class="offer">
+        <h3 id="offerTitle">あなたの住まいに合わせた、部屋別の対策プラン</h3>
+        <p id="offerLead"></p>
+        <span class="plan" id="planBadge">—</span>
+        <div class="ctas" id="offerCtas"></div>
+      </div>
+
+      <!-- 再診断（LTV再エンゲージ） -->
+      <div class="recheck">
+        <h3 id="recheckTitle">3か月後に、もう一度ダニ予報を。</h3>
+        <p id="recheckText"></p>
+        <a class="ctabtn line" id="recheckCta" href="#" target="_blank" rel="noopener">LINEで再診断のリマインドを受け取る</a>
+      </div>
+
+      <!-- 相談/枚数確認/再診断フォーム（離脱ゼロ＝この画面内） -->
+      <div class="formcard" id="formCard">
+        <h3 id="formTitle"></h3>
+        <p class="small" id="formBody" style="margin:0 0 16px"></p>
+        <form id="leadForm" autocomplete="on" novalidate>
+          <div class="hp" aria-hidden="true"><label>空欄のまま<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <input type="hidden" name="elapsedMs" id="hElapsed">
+          <div class="field">
+            <label id="lPurpose">ご希望（複数選択可）</label>
+            <div class="purposes" id="purposes"></div>
+          </div>
+          <div class="field"><label for="fName" id="lName">お名前</label><input type="text" id="fName" name="name" maxlength="60" required></div>
+          <div class="grid2">
+            <div class="field"><label for="fEmail" id="lEmail">メールアドレス</label><input type="email" id="fEmail" name="email" maxlength="120" required></div>
+            <div class="field"><label for="fTel" id="lTel">電話番号（任意）</label><input type="tel" id="fTel" name="tel" maxlength="30"></div>
+          </div>
+          <div class="field"><label for="fMsg" id="lMsg">ご相談内容（任意）</label><textarea id="fMsg" name="message" maxlength="1000"></textarea></div>
+          <div id="turnstile-holder"></div>
+          <label class="consent"><input type="checkbox" id="fConsent" required><span id="consentLabel"></span></label>
+
+          <input type="hidden" name="karteNo" id="hKarteNo">
+          <input type="hidden" name="daniIndex" id="hIndex">
+          <input type="hidden" name="riskBand" id="hBand">
+          <input type="hidden" name="homeType" id="hType">
+          <input type="hidden" name="axisHumidity" id="hAxHumidity">
+          <input type="hidden" name="axisBedding" id="hAxBedding">
+          <input type="hidden" name="axisDust" id="hAxDust">
+          <input type="hidden" name="axisSensitivity" id="hAxSensitivity">
+          <input type="hidden" name="totalSheets" id="hSheets">
+          <input type="hidden" name="roomBreakdown" id="hRooms">
+          <input type="hidden" name="planLabel" id="hPlan">
+          <input type="hidden" name="purposeText" id="hPurpose">
+          <input type="hidden" name="pageHost" id="hHost">
+          <input type="hidden" name="ua" id="hUa">
+
+          <button class="btn amber" type="submit" id="btnSubmit" style="width:100%">送信する</button>
+          <div class="err center" id="formErr"></div>
+        </form>
+        <div class="thanks" id="thanks">
+          <div class="chk">✓</div>
+          <h3 style="font-size:18px" id="thanksTitle"></h3>
+          <p class="small" id="thanksBody"></p>
+          <a class="ctabtn main toThanks" id="toThanksLink" href="thanks.html">初回スコア記録票・再診断の案内へ →</a>
+        </div>
+      </div>
+
+      <div class="resfoot">
+        <button class="btn ghost" id="btnPrint" type="button">カードを印刷／PDFで保存</button>
+        <a class="btn ghost" id="btnSave" href="thanks.html">記録票を保存・再診断案内</a>
+        <button class="btn ghost" id="btnRedo" type="button">別の条件でもう一度</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 見守りバンド（長期関係のトーン・可愛いイラスト＝assets/相対参照） ===== -->
+<section class="watch">
+  <div class="wrap">
+    <div class="inner">
+      <div class="illust"><img src="assets/illust-clean.svg" alt="朝日のさす清潔な寝室と、おひさま布団のマスコット" loading="lazy" width="400" height="300"></div>
+      <div class="cp">
+        <p class="eb">売って終わりにしません</p>
+        <h3>あなたの住まいを、季節ごとに見守ります。</h3>
+        <p>ダニは梅雨〜夏に増え、季節で再燃します。だからこそ、一度きりでなく、繰り返し「いまの状態」を数字で確かめられるようにしました。再診断でスコアの変化を見ながら、あなたのペースで続けやすい対策を一緒に考えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== しくみ（GEO本文・HowTo と一致） ===== -->
+<section id="method">
+  <div class="wrap">
+    <h2>住まいのダニ対策のしくみ</h2>
+    <p class="sec-sub">どこに多く、どう手を打つか</p>
+    <h3 style="font-size:17px;margin:4px 0 4px" id="howToTitle">住まいのダニ対策の進め方</h3>
+    <ol class="steps-ol" id="howToList"></ol>
+    <div class="notice" style="margin-top:20px" id="methodDisclaimer"></div>
+  </div>
+</section>
+
+<!-- ===== FAQ（可視・FAQPage schema と一致） ===== -->
+<section id="faq">
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    <p class="sec-sub">寝室・寝具・赤ちゃん・交換頻度について</p>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="foot-brand" id="footBrand">住まいのダニ・カルテ</p>
+    <div class="foot-links">
+      <a href="/" id="footHub">暮らしのカルテ（母屋）</a>
+      <a href="shisuu/">わが家のダニリスク指数とは</a>
+    </div>
+    <p class="foot-discl" id="footDisclaimer"></p>
+    <p class="foot-discl"><span class="num" id="year"></span> ／ <span id="footCopyright">暮らしのカルテ ／ 住まいのダニ・アレルギー診断</span></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

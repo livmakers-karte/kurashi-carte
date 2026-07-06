@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <!-- 淡い世界観の透かしタイル：住まい（間取り）＋舞うハウスダスト＋おひさま。極薄・タイル可 -->
+  <g fill="none" stroke="#29396A" stroke-opacity="0.05" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M22 60 L44 42 L66 60 V86 H22 Z"/>
+    <rect x="36" y="70" width="16" height="16"/>
+    <path d="M120 128 L142 110 L164 128 V154 H120 Z"/>
+    <rect x="134" y="138" width="16" height="16"/>
+    <rect x="96" y="40" width="40" height="20" rx="8"/>
+  </g>
+  <g fill="#29396A" fill-opacity="0.045">
+    <circle cx="100" cy="96" r="3"/><circle cx="150" cy="70" r="2.4"/><circle cx="60" cy="130" r="2.6"/>
+    <circle cx="28" cy="150" r="2"/><circle cx="170" cy="40" r="2.2"/><circle cx="86" cy="150" r="2"/>
+  </g>
+  <g fill="none" stroke="#EEA23C" stroke-opacity="0.06" stroke-width="2" stroke-linecap="round">
+    <circle cx="150" cy="40" r="7"/><line x1="150" y1="26" x2="150" y2="30"/><line x1="164" y1="40" x2="160" y2="40"/><line x1="160" y1="30" x2="157" y2="33"/>
+  </g>
+</svg>

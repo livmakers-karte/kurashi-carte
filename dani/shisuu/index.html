@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#29396A">
+<meta name="robots" content="noindex, nofollow">
+<title>わが家のダニリスク指数とは｜住まいのダニのたまりやすさを0〜100で表す目安｜暮らしのカルテ</title>
+<meta name="description" content="「わが家のダニリスク指数」は、寝具・湿度・布物・ご家族の感受性という住まいの4つの条件から、ダニのたまりやすさを0〜100の目安で表す、暮らしのカルテ独自のものさしです。指数の意味・5段階の予報・算出の考え方を解説。※リスクの目安で、医療診断ではありません。">
+<link rel="canonical" href="https://kurashi-carte.jp/dani/shisuu/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="暮らしのカルテ">
+<meta property="og:title" content="わが家のダニリスク指数とは｜住まいのダニのたまりやすさを0〜100で表す目安">
+<meta property="og:description" content="寝具・湿度・布物・感受性の4条件から、ダニのたまりやすさを0〜100で表す暮らしのカルテ独自のものさし。">
+<meta property="og:url" content="https://kurashi-carte.jp/dani/shisuu/">
+<meta property="og:image" content="https://kurashi-carte.jp/dani/assets/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json" id="ld-article"></script>
+<script type="application/ld+json" id="ld-breadcrumb">
+{ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"暮らしのカルテ","item":"https://kurashi-carte.jp/"},
+  {"@type":"ListItem","position":2,"name":"住まいのダニ・アレルギー診断","item":"https://kurashi-carte.jp/dani/"},
+  {"@type":"ListItem","position":3,"name":"わが家のダニリスク指数とは","item":"https://kurashi-carte.jp/dani/shisuu/"}
+]}
+</script>
+<script type="application/ld+json" id="ld-faq"></script>
+<style>
+  :root{
+    --indigo:#29396A; --indigo-2:#3A4E86; --sky:#5E8CCB; --sky-soft:#EAF0F8;
+    --linen:#FCF8F1; --linen-2:#F1EBDD; --line:#E6DECE;
+    --amber:#EEA23C; --amber-2:#D98A26; --rose:#C7677A;
+    --ink:#2A2E3A; --muted:#6E7180;
+    --disp:"Yu Gothic UI","BIZ UDPGothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+    --sans:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;
+    --num:"Bahnschrift","DIN Alternate","Yu Gothic UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--sans);color:var(--ink);line-height:1.85;font-size:16px;
+    background:radial-gradient(900px 440px at 90% -8%,rgba(238,162,60,.09),transparent 60%),radial-gradient(rgba(41,57,106,.045) 1.1px,transparent 1.2px) 0 0/22px 22px,var(--linen);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:var(--disp);font-weight:800;color:var(--indigo);line-height:1.4}
+  a{color:var(--indigo-2)}
+  .num{font-family:var(--num);font-variant-numeric:tabular-nums}
+  header.site{background:var(--indigo);color:#fff}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none}
+  .brand .emblem{width:32px;height:32px}
+  .brand .mark{font-family:var(--disp);font-size:16px;font-weight:800}
+  .home-link{color:#c3cee8;text-decoration:none;font-size:12.5px}
+  .crumb{font-size:12px;color:var(--muted);padding:14px 0 0}
+  .crumb a{color:var(--indigo-2)}
+  main{padding:6px 0 44px}
+  h1{font-size:clamp(24px,5vw,34px);margin:14px 0 8px}
+  .lead{font-size:15.5px;color:#3f4351;margin:0 0 8px}
+  .def{background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:12px;padding:18px 20px;margin:22px 0}
+  .def .k{font-size:12px;letter-spacing:.06em;color:var(--amber-2);font-weight:800;margin:0 0 6px}
+  .def p{margin:0;font-size:14.5px}
+  h2{font-size:clamp(19px,3.4vw,23px);margin:30px 0 10px;padding-left:13px;position:relative}
+  h2::before{content:"";position:absolute;left:0;top:.16em;bottom:.16em;width:4px;border-radius:3px;background:linear-gradient(180deg,var(--amber),var(--sky))}
+  .factors{display:grid;gap:11px;grid-template-columns:1fr 1fr}
+  @media(max-width:560px){.factors{grid-template-columns:1fr}}
+  .factor{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+  .factor .fl{font-family:var(--disp);font-weight:800;color:var(--indigo);font-size:14.5px;margin:0 0 4px}
+  .factor .ft{font-size:12.5px;color:#4a4e5a;margin:0}
+  .bands{display:grid;gap:8px;margin:10px 0 0}
+  .bandrow{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:11px;padding:11px 14px;background:#fff}
+  .bandrow .sw{width:14px;height:14px;border-radius:50%;flex:0 0 auto}
+  .bandrow .bl{font-family:var(--disp);font-weight:800;font-size:14px;min-width:78px}
+  .bandrow .br{font-family:var(--num);font-size:13px;color:var(--muted);min-width:64px}
+  .bandrow .bt{font-size:12.5px;color:#4a4e5a}
+  p.body{font-size:14.5px;color:#3f4351}
+  .cite{background:var(--sky-soft);border:1px solid #d7e2f2;border-radius:12px;padding:14px 16px;font-size:12.5px;color:#37456b;margin:22px 0 0}
+  .faq details{border-bottom:1px solid var(--line);padding:4px 0}
+  .faq summary{cursor:pointer;list-style:none;padding:14px 28px 14px 4px;font-weight:800;color:var(--indigo);font-size:14.5px;position:relative;font-family:var(--disp)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"＋";position:absolute;right:6px;top:13px;color:var(--amber-2);font-weight:800}
+  .faq details[open] summary::after{content:"－"}
+  .faq .a{padding:0 4px 15px;font-size:13.5px;line-height:1.8;color:var(--ink)}
+  .backcta{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a08;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:12px;margin:26px 0 0;font-family:var(--disp);min-height:50px}
+  .disc{border:1px solid #e2c6ce;background:#fbf1f3;border-radius:12px;padding:14px 16px;font-size:12px;color:#6e3b47;line-height:1.7;margin:22px 0 0}
+  footer.site{background:var(--indigo);color:#9fb0d6;padding:22px 0;font-size:11.5px;margin-top:10px}
+  footer.site a{color:#dbe3f2}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="emblem" viewBox="0 0 100 100"><path d="M50 16 L82 42 V84 H18 V42 Z" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round"/><rect x="38" y="58" width="24" height="26" fill="none" stroke="#fff" stroke-width="3"/><circle cx="50" cy="40" r="10" fill="#EEA23C"/></symbol>
+</defs></svg>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="../"><svg class="emblem"><use href="#emblem"/></svg><span class="mark">住まいのダニ・カルテ</span></a>
+  <a class="home-link" href="/">← 暮らしのカルテ</a>
+</div></header>
+
+<div class="wrap">
+  <p class="crumb"><a href="/">暮らしのカルテ</a> ／ <a href="../">住まいのダニ診断</a> ／ わが家のダニリスク指数とは</p>
+</div>
+
+<main><div class="wrap">
+  <h1 id="h1">「わが家のダニリスク指数」とは</h1>
+  <p class="lead" id="lead"></p>
+
+  <div class="def">
+    <p class="k">定義（一次ソース）</p>
+    <p id="definition"></p>
+  </div>
+
+  <h2 id="factorsTitle">指数をつくる4つの条件</h2>
+  <div class="factors" id="factors"></div>
+
+  <h2 id="bandsTitle">5段階のダニ予報（指数の目安）</h2>
+  <div class="bands" id="bands"></div>
+
+  <h2 id="howTitle">指数の算出の考え方</h2>
+  <p class="body" id="howText"></p>
+
+  <div class="cite" id="citation"></div>
+
+  <h2 id="faqTitle">指数についてよくある質問</h2>
+  <div class="faq" id="faqList"></div>
+
+  <a class="backcta" href="../">わが家のダニリスク指数を診断する →</a>
+  <div class="disc" id="discBox"></div>
+</div></main>
+
+<footer class="site"><div class="wrap">
+  <span id="footCopyright"></span> ／ <a href="/">母屋へ</a> ／ <a href="../">診断トップへ</a>
+</div></footer>
+
+<script src="shisuu.js"></script>
+</body>
+</html>
