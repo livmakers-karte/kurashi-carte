@@ -3,8 +3,8 @@
   "note_for_editors": "非エンジニアが安全に書き換える設定ファイルです。__で始まる値はBOSSが実データに差し替えるプレースホルダ（URL・キー等）。この1枚だけで /dani/（住まいのダニ・アレルギー診断）が動きます。scoring.weight や rooms.sheets を変えると指数・部屋別の必要枚数が変わります。【景表法・薬機法】ダニ取りシートは『引き寄せて捕獲する対策シート』の実機能表現に留め、『駆除・退治・殺す・アレルギーが治る・症状が改善』等の断定は絶対に追記しないでください。商品区分（雑品か防除用医薬部外品か）はBOSSが確認し apros.category を正しい表記にしてください。",
 
   "gas": {
-    "endpoint": "__DANI_GAS_EXEC_URL__",
-    "turnstileSitekey": "__DANI_TURNSTILE_SITEKEY__"
+    "endpoint": "https://script.google.com/macros/s/AKfycbxxsCJuZ2tKgkCw1ex6Q77wILbjcXtR2ZDn6PbKQAou0866ssMqKoHr4P_Z0TcDFfG_/exec",
+    "turnstileSitekey": "0x4AAAAAADv0abekmmO5sg2v"
   },
 
   "site": {

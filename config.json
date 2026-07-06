@@ -35,11 +35,11 @@
   },
 
   "turnstile": {
-    "sitekey": "__TURNSTILE_SITEKEY__"
+    "sitekey": "0x4AAAAAADv0abekmmO5sg2v"
   },
 
   "gas": {
-    "endpoint": "__GAS_EXEC_URL__",
+    "endpoint": "https://script.google.com/macros/s/AKfycbxxsCJuZ2tKgkCw1ex6Q77wILbjcXtR2ZDn6PbKQAou0866ssMqKoHr4P_Z0TcDFfG_/exec",
     "note": "Google Apps Script のウェブアプリ /exec URL。secret類はGAS側スクリプトプロパティに隔離しHTMLには出さない。"
   },
 
@@ -279,7 +279,7 @@
   },
 
   "cross": [
-    { "id": "apros", "title": "Apros（アプロス）", "desc": "ダニ・寝具まわりの気になる方へ", "url": "__APROS_URL__" },
+    { "id": "apros", "title": "Apros（アプロス）", "desc": "ダニ・寝具まわりの気になる方へ", "url": "https://apros-online.jp/shop/information/2024-03-01" },
     { "id": "karada", "title": "からだのカルテ", "desc": "からだの悩みを数値で診る無料診断メディア", "url": "https://karada-carte.jp/" }
   ],
 
